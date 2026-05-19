@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>it:fu — 인플루언서 가이드라인</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Montserrat:wght@300;400&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
   <style>
@@ -30,6 +30,8 @@
       line-height: 1.7;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
     }
 
     /* BANNER */
@@ -86,6 +88,8 @@
     /* SECTION */
     .section {
       padding: 48px 28px;
+      padding-left: max(28px, env(safe-area-inset-left, 28px));
+      padding-right: max(28px, env(safe-area-inset-right, 28px));
       border-bottom: 1px solid var(--border);
       max-width: 640px;
       margin: 0 auto;
@@ -171,6 +175,7 @@
       text-decoration: none;
       letter-spacing: 0.03em;
       min-height: 44px;
+      touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
     }
     .brand-link-btn:active { opacity: 0.75; }
@@ -249,8 +254,10 @@
       align-self: flex-start;
       border: 1px solid var(--border);
       min-height: 44px;
+      touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
     }
+    .product-link-btn:active { opacity: 0.7; }
 
     /* MUST / RECOMMEND */
     .must-list { display: grid; gap: 10px; margin-bottom: 24px; }
@@ -370,6 +377,7 @@
       align-items: center;
       gap: 5px;
       min-height: 44px;
+      touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
     }
     .hashtag:active { opacity: 0.6; }
@@ -406,6 +414,7 @@
       text-decoration: none;
       transition: background 0.15s;
       min-height: 52px;
+      touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
     }
     .ref-link:active { background: var(--tag-bg); }
@@ -434,6 +443,7 @@
       text-decoration: none;
       letter-spacing: 0.04em;
       min-height: 56px;
+      touch-action: manipulation;
       -webkit-tap-highlight-color: transparent;
       transition: opacity 0.15s;
     }
@@ -487,17 +497,25 @@
       .info-key { min-width: 62px; font-size: 11px; }
       .product-name { font-size: 14px; }
       .must-item { font-size: 12.5px; padding: 12px 14px; }
+      .key-info-box { padding: 14px 16px; }
+      .key-info-tag { font-size: 11px; padding: 4px 9px; }
       .hashtag { font-size: 12px; padding: 10px 12px; }
       .ref-link-label { font-size: 13px; }
+      .apply-btn { font-size: 14px; }
       .footer { padding: 28px 20px; font-size: 11px; }
     }
 
     @media (max-width: 360px) {
       .section { padding: 28px 14px; }
       .section-title { font-size: 17px; }
+      .about-lead { font-size: 12.5px; }
       .hashtag { font-size: 11.5px; padding: 9px 10px; }
       .about-item { padding: 14px 16px; }
       .info-box { padding: 16px; }
+      .must-item { font-size: 12px; padding: 10px 12px; gap: 10px; }
+      .key-info-box { padding: 12px 14px; gap: 12px; }
+      .product-name { font-size: 13.5px; }
+      .apply-btn { font-size: 13.5px; min-height: 52px; }
     }
   </style>
 </head>
@@ -521,7 +539,7 @@
     국내 스킨케어 브랜드로, "피부 요철 케어"와 저자극 성분 중심의 제품을 메인 콘셉트로 잡고 있어요. 브랜드명은 it + future의 의미를 담고 있으며, 자연 유래 성분과 피부 고민 해결 중심의 포뮬러를 강조하는 브랜드입니다.
   </p>
   <div class="brand-img-wrap">
-    <img src="image/제품.PNG" alt="it:fu 제품">
+    <img src="image/제품.PNG" alt="it:fu 제품" loading="lazy">
   </div>
   <div class="about-grid">
     <div class="about-item">
@@ -644,8 +662,8 @@
       <div class="must-icon">🔗</div>
       <div>
         <strong>[공동작업자]</strong> 설정 필수<br>
-        <span class="collab-handle" style="display:inline-flex;align-items:center;gap:5px;margin-top:6px;font-size:13px;color:var(--text-dark);font-weight:600;cursor:pointer;">@itfu_official</span><br>
-        <span class="collab-handle" style="display:inline-flex;align-items:center;gap:5px;margin-top:4px;font-size:13px;color:var(--text-dark);font-weight:600;cursor:pointer;">@itfu_global</span>
+        <span class="collab-handle" style="display:inline-flex;align-items:center;gap:5px;margin-top:6px;font-size:13px;color:var(--green);font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;padding:4px 0;">@itfu_official ⎘</span><br>
+        <span class="collab-handle" style="display:inline-flex;align-items:center;gap:5px;margin-top:4px;font-size:13px;color:var(--green);font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;padding:4px 0;">@itfu_global ⎘</span>
       </div>
     </div>
   </div>
