@@ -1293,8 +1293,33 @@
     </div>
 
     <div class="form-group">
+      <label class="form-label" for="appZip">우편번호<span class="req">*</span></label>
+      <div class="form-row-zip">
+        <input type="text" id="appZip" name="zipcode" class="form-input" placeholder="00000" inputmode="numeric" pattern="[0-9]*" maxlength="5" readonly required>
+        <button type="button" class="zip-search-btn" onclick="searchAddress()">주소 검색</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="appRoadAddress">배송지 주소<span class="req">*</span></label>
+      <input type="text" id="appRoadAddress" name="roadAddress" class="form-input" placeholder="도로명 주소" readonly required>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="appDetailAddress">상세 주소<span class="req">*</span></label>
+      <input type="text" id="appDetailAddress" name="detailAddress" class="form-input" placeholder="동·호수 등" required>
+    </div>
+
+    <div class="form-group">
       <label class="form-label" for="appNote">요청사항<span class="opt">(선택)</span></label>
-      <textarea id="appNote" name="note" class="form-textarea" placeholder="요청사항을 적어주세요"></textarea>
+      <textarea id="appNote" name="note" class="form-textarea" placeholder="배송 관련 요청사항을 적어주세요"></textarea>
+    </div>
+
+    <input type="hidden" id="appFullAddress" name="fullAddress">
+
+    <div class="warning-box">
+      ⚠️ <strong>배송지는 매 캠페인마다 새로 확인합니다.</strong><br>
+      오배송 방지를 위해 입력값을 다시 한번 체크해 주세요.
     </div>
 
     <div class="note-box" style="margin-top:16px;">
@@ -1421,7 +1446,29 @@
   });
 </script>
 
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
+  // 주소 검색 (다음 우편번호 서비스)
+  function searchAddress() {
+    new daum.Postcode({
+      oncomplete: function (data) {
+        document.getElementById('appZip').value = data.zonecode;
+        document.getElementById('appRoadAddress').value = data.roadAddress;
+        updateFullAddress();
+        document.getElementById('appDetailAddress').focus();
+      }
+    }).open();
+  }
+
+  // 배송지 주소 + 상세 주소를 하나의 값으로 합쳐 hidden 필드에 저장
+  function updateFullAddress() {
+    const road = document.getElementById('appRoadAddress').value.trim();
+    const detail = document.getElementById('appDetailAddress').value.trim();
+    document.getElementById('appFullAddress').value = [road, detail].filter(Boolean).join(' ');
+  }
+  const appDetailAddressEl = document.getElementById('appDetailAddress');
+  if (appDetailAddressEl) appDetailAddressEl.addEventListener('input', updateFullAddress);
+
   // 인스타그램 입력값을 https://instagram.com/handle 형태로 정규화
   function normalizeInstagramLink(value) {
     let v = (value || '').trim();
@@ -1446,9 +1493,10 @@
   const APP_TIER = 'A';
   const APP_PRICE = '5만원';
 
-  // 휴대폰(phone)은 앞자리 0 보존을 위해 항상 문자열로 취급
+  // 우편번호(zipcode)·휴대폰(phone)은 앞자리 0 보존을 위해 항상 문자열로 취급
   function submitApplication(e) {
     e.preventDefault();
+    updateFullAddress();
 
     const form = document.getElementById('applicationForm');
     const data = {
@@ -1461,6 +1509,8 @@
       instagram: normalizeInstagramLink(form.instagram.value),
       phone: String(form.phone.value.trim()),
       email: form.email.value.trim(),
+      zipcode: String(form.zipcode.value.trim()),
+      address: form.fullAddress.value,
       note: form.note.value.trim()
     };
 
@@ -1482,6 +1532,7 @@
       showNotice('제출이 완료되었습니다');
       form.reset();
       setBranch('hongdae');
+      document.getElementById('appFullAddress').value = '';
     }).catch(() => {
       showNotice('제출 중 오류가 발생했습니다. 다시 시도해 주세요.');
     }).finally(() => {
