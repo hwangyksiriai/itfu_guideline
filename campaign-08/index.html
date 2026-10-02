@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>it:fu — 인플루언서 가이드라인</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Montserrat:wght@300;400&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #5BA3C9;
+      --green-light: #7BBCD8;
+      --green-pale: #B8DCF0;
+      --cream: #F5FAFD;
+      --warm-white: #EEF6FB;
+      --text-dark: #1A2A35;
+      --text-mid: #3D6B85;
+      --text-light: #6899B0;
+      --border: #C5E0EF;
+      --tag-bg: #DFF0F9;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    /* BANNER */
+    .banner-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .banner-wrap img {
+      width: 100%;
+      display: block;
+    }
+    .banner-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: left;
+      padding: 0 36px;
+    }
+    .header-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      font-weight: 300;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .header-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .header-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 300;
+      color: #ffffff;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 480px) {
+      .header-title { font-size: 18px; }
+      .banner-overlay { padding: 0 24px; }
+    }
+
+    /* SECTION */
+    .section {
+      padding: 48px 28px;
+      padding-left: max(28px, env(safe-area-inset-left, 28px));
+      padding-right: max(28px, env(safe-area-inset-right, 28px));
+      border-bottom: 1px solid var(--border);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .section:last-child { border-bottom: none; }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--green);
+    }
+    .section-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    /* ABOUT */
+    .about-lead {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.8;
+    }
+    .brand-img-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+    }
+    .brand-img-wrap img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .about-grid { display: grid; gap: 12px; }
+    .about-item {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .about-item-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+    .about-item-desc {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+    .brand-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: var(--green);
+      color: white;
+      font-size: 12.5px;
+      font-weight: 600;
+      border-radius: 20px;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      min-height: 44px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .brand-link-btn:active { opacity: 0.75; }
+
+    /* INFO BOX */
+    .info-box {
+      background: var(--green);
+      color: white;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 12px;
+    }
+    .info-box-title {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--green-pale);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 13.5px;
+      margin-bottom: 10px;
+    }
+    .info-row:last-child { margin-bottom: 0; }
+    .info-key {
+      min-width: 70px;
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .info-val { color: white; font-weight: 500; line-height: 1.6; }
+    .info-val strong { color: #C5E8F5; }
+
+    .info-warning {
+      font-size: 12px;
+      color: var(--text-mid);
+      background: #EAF5FB;
+      border: 1px solid #B8D8EC;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 20px;
+    }
+
+    /* PRODUCT */
+    .product-list { display: grid; gap: 12px; }
+    .product-box {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .product-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+    .product-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 11px 16px;
+      background: var(--tag-bg);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 20px;
+      text-decoration: none;
+      align-self: flex-start;
+      border: 1px solid var(--border);
+      min-height: 44px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .product-link-btn:active { opacity: 0.7; }
+
+    /* MUST / RECOMMEND */
+    .must-list { display: grid; gap: 10px; margin-bottom: 24px; }
+    .must-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .must-icon { font-size: 15px; margin-top: 1px; flex-shrink: 0; }
+    .must-item strong { color: var(--text-dark); }
+
+    /* 핵심정보 카드 */
+    .key-info-box {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-top: 16px;
+      display: grid;
+      gap: 16px;
+    }
+    .key-info-group-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .key-info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .key-info-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .key-info-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .key-info-desc {
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+    .key-info-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .key-info-tag {
+      font-size: 11px;
+      background: var(--tag-bg);
+      color: var(--green);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+    .slogan-box {
+      background: var(--green);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 12.5px;
+      color: white;
+      line-height: 1.6;
+    }
+    .slogan-label {
+      font-size: 10px;
+      color: var(--green-pale);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .rec-list {
+      background: #EAF5FB;
+      border: 1px solid #B8D8EC;
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .rec-title { font-size: 12px; font-weight: 700; color: var(--green); margin-bottom: 12px; }
+    .rec-item { font-size: 12.5px; color: var(--text-mid); padding: 5px 0; border-bottom: 1px solid #B8D8EC; line-height: 1.6; }
+    .rec-item:last-child { border-bottom: none; }
+
+    /* HASHTAG */
+    .hashtag-section { margin-top: 20px; }
+    .hashtag-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-mid);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hashtag-label .required { background: var(--green); color: white; font-size: 10px; padding: 2px 7px; border-radius: 10px; }
+    .hashtag-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .hashtag {
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+      transition: opacity 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      min-height: 44px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .hashtag:active { opacity: 0.6; }
+    .hashtag.req { background: var(--green); color: white; }
+    .hashtag.req::after { content: '⎘'; font-size: 11px; color: rgba(255,255,255,0.5); }
+
+    /* WARNING */
+    .warning-box {
+      background: #EDF6FF;
+      border: 1px solid #90BFDB;
+      border-radius: 12px;
+      padding: 16px 18px;
+      font-size: 12.5px;
+      color: #2A5A75;
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+    .warning-box strong { color: #1A3A4F; }
+
+    /* REFERENCE */
+    .ref-box {
+      display: grid;
+      gap: 10px;
+    }
+    .ref-note { font-size: 11px; color: var(--text-light); margin-bottom: 4px; }
+    .ref-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      text-decoration: none;
+      transition: background 0.15s;
+      min-height: 52px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .ref-link:active { background: var(--tag-bg); }
+    .ref-link-label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .ref-link-arrow {
+      font-size: 13px;
+      color: var(--green-light);
+    }
+
+    /* APPLY */
+    .apply-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 18px;
+      background: var(--green);
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 14px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      min-height: 56px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      transition: opacity 0.15s;
+    }
+    .apply-btn:active { opacity: 0.75; }
+
+    /* DIVIDER */
+    .divider { height: 1px; background: var(--border); margin: 24px 0; }
+
+    /* COPY TOAST */
+    .copy-toast {
+      position: fixed;
+      bottom: max(32px, env(safe-area-inset-bottom, 32px));
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background: rgba(18, 42, 58, 0.9);
+      color: white;
+      font-size: 13px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s, transform 0.2s;
+      z-index: 9999;
+      white-space: nowrap;
+    }
+    .copy-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--green);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 36px 32px;
+      padding-bottom: max(36px, env(safe-area-inset-bottom, 36px));
+      font-size: 11.5px;
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+    }
+    .footer strong { color: rgba(255,255,255,0.85); }
+
+    @media (max-width: 480px) {
+      .section { padding: 36px 20px; }
+      .section-title { font-size: 18px; }
+      .section-label { font-size: 9.5px; }
+      .about-lead { font-size: 13px; }
+      .info-box { padding: 20px; }
+      .info-row { font-size: 13px; }
+      .info-key { min-width: 62px; font-size: 11px; }
+      .product-name { font-size: 14px; }
+      .must-item { font-size: 12.5px; padding: 12px 14px; }
+      .key-info-box { padding: 14px 16px; }
+      .key-info-tag { font-size: 11px; padding: 4px 9px; }
+      .hashtag { font-size: 12px; padding: 10px 12px; }
+      .ref-link-label { font-size: 13px; }
+      .apply-btn { font-size: 14px; }
+      .footer { padding: 28px 20px; font-size: 11px; }
+    }
+
+    @media (max-width: 360px) {
+      .section { padding: 28px 14px; }
+      .section-title { font-size: 17px; }
+      .about-lead { font-size: 12.5px; }
+      .hashtag { font-size: 11.5px; padding: 9px 10px; }
+      .about-item { padding: 14px 16px; }
+      .info-box { padding: 16px; }
+      .must-item { font-size: 12px; padding: 10px 12px; gap: 10px; }
+      .key-info-box { padding: 12px 14px; gap: 12px; }
+      .product-name { font-size: 13.5px; }
+      .apply-btn { font-size: 13.5px; min-height: 52px; }
+    }
+
+    /* MAIN HOOK */
+    .deal-box {
+      background: linear-gradient(160deg, var(--green) 0%, #4A8FB5 100%);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .deal-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--green-pale);
+    }
+    .deal-price {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .deal-before { font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: line-through; }
+    .deal-arrow { font-size: 13px; color: var(--green-pale); }
+    .deal-after {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .deal-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .deal-badge {
+      font-size: 11px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 20px;
+      padding: 4px 10px;
+    }
+    .deal-note { font-size: 12px; line-height: 1.75; color: rgba(255,255,255,0.88); margin-top: 14px; }
+    .deal-note strong { color: #fff; }
+    .guide-sub { font-size: 12px; color: var(--text-mid); line-height: 1.7; margin-top: 10px; }
+    .guide-sub strong { color: var(--text-dark); }
+
+    /* APPLICATION FORM */
+    .form-group { margin-bottom: 18px; }
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .form-label .req { color: #C0504D; margin-left: 2px; }
+    .form-label .opt { font-size: 11px; color: var(--text-light); font-weight: 500; margin-left: 4px; }
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      /* 16px 미만이면 iOS 에서 포커스 시 화면이 확대됨 */
+      font-size: 16px;
+      font-family: inherit;
+      color: var(--text-dark);
+      background: #fff;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .form-input:focus, .form-textarea:focus { outline: none; border-color: var(--green); }
+    .form-input[readonly] { background: var(--warm-white); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-light); opacity: 0.75; }
+    .form-textarea { resize: vertical; min-height: 90px; line-height: 1.7; }
+    .form-row-zip { display: flex; gap: 8px; }
+    .form-row-zip .form-input { flex: 1; min-width: 0; }
+    .zip-search-btn {
+      padding: 0 18px;
+      min-height: 50px;
+      background: var(--text-dark);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .zip-search-btn:active { opacity: 0.8; }
+
+    .note-box {
+      border: 1px dashed var(--green-light);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      background: var(--cream);
+    }
+    .note-box-title { font-size: 13px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+    .note-box ul { padding-left: 18px; font-size: 12.5px; color: var(--text-mid); line-height: 1.85; }
+    .note-box li + li { margin-top: 4px; }
+
+    .agree-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin: 20px 0;
+      font-size: 12.5px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      cursor: pointer;
+    }
+    .agree-row input[type="checkbox"] {
+      margin-top: 3px;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      accent-color: var(--green);
+    }
+    .agree-row strong { color: var(--green); font-weight: 700; }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      min-height: 54px;
+      padding: 16px 20px;
+      background: var(--text-dark);
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      font-size: 14.5px;
+      font-weight: 700;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .submit-btn:active { opacity: 0.85; }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* SETTLEMENT */
+    .settlement-lead { font-size: 13.5px; color: var(--text-mid); margin-bottom: 22px; line-height: 1.8; }
+    .settlement-lead strong { color: var(--text-dark); }
+    .settle-tag-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .settle-doc-text { font-size: 13px; color: var(--text-mid); margin: 0 0 20px; line-height: 1.75; }
+    .settle-copy-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      font-size: 13.5px;
+      color: var(--text-dark);
+    }
+    .settle-copy-box span { word-break: break-all; }
+    .settle-copy-btn {
+      flex-shrink: 0;
+      background: var(--green);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 9px 14px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .settle-copy-btn:active { opacity: 0.8; }
+
+    /* MOBILE POLISH */
+    @media (max-width: 480px) {
+      .form-label { font-size: 12.5px; }
+      .form-input, .form-textarea { padding: 13px 14px; }
+      .zip-search-btn { padding: 0 14px; font-size: 12.5px; }
+      .note-box { padding: 14px 16px; }
+      .note-box ul { font-size: 12px; }
+      .agree-row { font-size: 12px; }
+      .submit-btn { font-size: 14px; }
+      .settlement-lead { font-size: 13px; }
+      .settle-copy-box { font-size: 12.5px; padding: 13px 14px; }
+    }
+    @media (max-width: 360px) {
+      .form-group { margin-bottom: 15px; }
+      .form-row-zip { gap: 6px; }
+      .zip-search-btn { padding: 0 11px; font-size: 12px; }
+      .settle-copy-box { flex-wrap: wrap; gap: 10px; }
+      .settle-copy-btn { width: 100%; padding: 11px 14px; }
+      .submit-btn { font-size: 13.5px; }
+    }
+
+    /* MAIN HOOK — 보조 카드 · 안내문 */
+    .deal-sub { font-size: 11.5px; line-height: 1.7; margin-top: 12px; color: rgba(255,255,255,0.8); }
+    .deal-box-alt {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      color: var(--text-dark);
+    }
+    .deal-box-alt .deal-label { color: var(--green); }
+    .deal-box-alt .deal-before { color: var(--text-light); }
+    .deal-box-alt .deal-arrow { color: var(--green-light); }
+    .deal-box-alt .deal-after { color: var(--text-dark); }
+    .deal-box-alt .deal-badge {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      color: var(--green);
+    }
+    .deal-box-alt .deal-sub { color: var(--text-light); }
+    .deal-note-box {
+      border: 1px dashed var(--green-light);
+      border-radius: 12px;
+      background: var(--cream);
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+    .deal-note-box strong { color: var(--text-dark); }
+
+    /* ACCORDION */
+    .acc {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .acc-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
+      cursor: pointer;
+      list-style: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .acc-head::-webkit-details-marker { display: none; }
+    .acc-head::marker { content: ''; }
+    .acc-head strong { color: var(--text-dark); }
+    .acc-head:active { background: var(--tag-bg); }
+    .acc-icon { font-size: 15px; flex-shrink: 0; }
+    .acc-label { flex: 1; min-width: 0; }
+    .acc-arrow {
+      flex-shrink: 0;
+      font-size: 12px;
+      color: var(--green);
+      transition: transform 0.2s;
+    }
+    .acc[open] .acc-arrow { transform: rotate(180deg); }
+    .acc[open] .acc-head { border-bottom: 1px solid var(--border); }
+    .acc-body {
+      padding: 14px 16px 16px;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .acc-body > ul:first-child,
+    .acc-body > .key-info-box:first-child { margin-top: 0; }
+
+    @media (max-width: 480px) {
+      .acc-head { font-size: 12.5px; padding: 13px 14px; }
+      .acc-body { padding: 13px 14px 15px; font-size: 12.5px; }
+      .deal-note-box { font-size: 11.5px; padding: 13px 14px; }
+    }
+  
+    /* OFFLINE — 지점 선택 */
+    .branch-toggle {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      padding: 5px;
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 18px;
+    }
+    .branch-toggle button {
+      min-height: 44px;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      font-family: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-light);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .branch-toggle button.on { background: #fff; color: var(--green); box-shadow: 0 1px 6px rgba(91,163,201,0.18); }
+    body[data-branch="hongdae"] [data-store="seongsu"],
+    body[data-branch="seongsu"] [data-store="hongdae"] { display: none !important; }
+
+    .store-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 18px 16px;
+    }
+    .store-box-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .store-point { margin-bottom: 14px; }
+    .store-point + .store-point { padding-top: 14px; border-top: 1px solid var(--warm-white); }
+    .store-point-title {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .store-point-num { font-family: 'Montserrat', sans-serif; font-size: 11px; color: var(--green); letter-spacing: 0.05em; }
+    .store-point ul { padding-left: 18px; font-size: 12.5px; color: var(--text-mid); line-height: 1.8; }
+    .store-point li + li { margin-top: 3px; }
+    .hl { color: #C0504D; font-weight: 700; }
+
+    .thumb-copy { display: flex; flex-direction: column; gap: 6px; margin: 10px 0 4px; }
+    .thumb-copy span {
+      display: block;
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .ok-ng { display: grid; gap: 6px; margin-top: 6px; font-size: 12.5px; }
+    .ok-ng .ok { color: var(--green); font-weight: 700; }
+    .ok-ng .ng { color: #C0504D; font-weight: 700; }
+
+    .branch-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .branch-opt { position: relative; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .branch-opt input { position: absolute; opacity: 0; width: 1px; height: 1px; left: 50%; bottom: 0; }
+    .branch-opt span {
+      display: block;
+      padding: 14px 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-mid);
+      line-height: 1.4;
+    }
+    .branch-opt span small { display: block; font-size: 11px; font-weight: 500; color: var(--text-light); margin-top: 2px; }
+    .branch-opt input:checked + span { border-color: var(--green); background: var(--tag-bg); color: var(--green); }
+    .branch-opt input:focus-visible + span { outline: 2px solid var(--green); outline-offset: 2px; }
+  </style>
+</head>
+<body data-branch="hongdae">
+
+<!-- BANNER -->
+<div class="banner-wrap">
+  <img src="image/배너.PNG" alt="it:fu 배너">
+  <div class="banner-overlay">
+    <div class="header-eyebrow">Influencer Guideline</div>
+    <div class="header-title">잇퓨 가이드라인</div>
+    <div class="header-sub">Musinsa Beauty Offline × Creator Campaign</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+  <div class="section-label">About Brand</div>
+  <div class="section-title">잇퓨에 대하여</div>
+  <p class="about-lead">
+    국내 스킨케어 브랜드로, "피부 요철 케어"와 저자극 성분 중심의 제품을 메인 콘셉트로 잡고 있어요. 브랜드명은 it + future의 의미를 담고 있으며, 자연 유래 성분과 피부 고민 해결 중심의 포뮬러를 강조하는 브랜드입니다.
+  </p>
+  <div class="brand-img-wrap">
+    <img src="image/제품.PNG" alt="it:fu 제품" loading="lazy">
+  </div>
+  <div class="about-grid">
+    <div class="about-item">
+      <div class="about-item-title">캠페인 제품</div>
+      <div class="about-item-desc">이번 캠페인 제품은 '[율무·펩타이드] 스킨 리밸런싱 순율 앰플'입니다.</div>
+    </div>
+    <div class="about-item">
+      <div class="about-item-title">핵심 성분 및 특징</div>
+      <div class="about-item-desc">율무포어·펩타이드 성분으로 모공과 피부결을 집중 케어하는 앰플입니다.</div>
+    </div>
+    <div class="about-item">
+      <div class="about-item-title">브랜드 반응 및 성과</div>
+      <div class="about-item-desc">매끈한 피부 표현과 좁쌀·오돌토돌 개선 무드로 SNS에서 바이럴되었으며, 지그재그 전체 랭킹 1위를 기록했습니다.</div>
+    </div>
+  </div>
+  <a href="https://it-fu.com" target="_blank" class="brand-link-btn">브랜드 바로가기 →</a>
+</div>
+
+<!-- 캠페인 개요 -->
+<div class="section">
+  <div class="section-label">Campaign Info</div>
+  <div class="section-title">캠페인 개요</div>
+  <div class="info-box">
+    <div class="info-box-title">Schedule & Details</div>
+    <div class="info-row">
+      <div class="info-key">형식</div>
+      <div class="info-val">릴스 (Reels)</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">미션</div>
+      <div class="info-val"><strong>무신사 뷰티 매장 방문</strong> 후<br>매장 바이럴 릴스 업로드</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">업로드</div>
+      <div class="info-val"><strong>10/23까지 업로드</strong></div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">타겟 키워드</div>
+      <div class="info-val"><strong>무신사 모공앰플 (메인)</strong><br>잇퓨 모공앰플 · 율무모공앰플</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">방문 지점</div>
+      <div class="info-val"><strong>홍대점 · 성수점 중 택 1</strong><br>캠페인 신청 시 선택</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">방문 주소</div>
+      <div class="info-val">홍대 — 서울 마포구 서교동 345-9<br>성수 — 서울 성동구 성수동2가 271-24</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">영상 길이</div>
+      <div class="info-val">90초 이내</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">공동작업자</div>
+      <div class="info-val">필수</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">2차 활용</div>
+      <div class="info-val">동의</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">활용기간</div>
+      <div class="info-val">3개월</div>
+    </div>
+  </div>
+  <div class="info-warning">⚠️ 안내된 일정 미준수 시 고료 지급이 어렵습니다.</div>
+</div>
+
+<!-- 매장 안내 -->
+<div class="section">
+  <div class="section-label">Store Info</div>
+  <div class="section-title">매장 안내</div>
+
+  <div class="branch-toggle" role="tablist" aria-label="방문 지점">
+    <button type="button" class="on" data-branch-btn="hongdae" role="tab">홍대점</button>
+    <button type="button" data-branch-btn="seongsu" role="tab">성수점</button>
+  </div>
+
+  <div class="settle-tag-label" style="margin-top:0">방문 주소</div>
+  <div class="settle-copy-box" data-store="hongdae">
+    <span>서울 마포구 서교동 345-9</span>
+    <button type="button" class="settle-copy-btn" onclick="copyText('서울 마포구 서교동 345-9')">복사</button>
+  </div>
+  <div class="settle-copy-box" data-store="seongsu">
+    <span>서울 성동구 성수동2가 271-24</span>
+    <button type="button" class="settle-copy-btn" onclick="copyText('서울 성동구 성수동2가 271-24')">복사</button>
+  </div>
+  <div style="height:16px"></div>
+
+  <div data-store="seongsu">
+    <div class="note-box">
+      <div class="note-box-title">📌 성수점 방문 안내</div>
+      <ul>
+        <li>성수점도 <strong>홍대점과 동일한 기조</strong>로 촬영해 주세요.</li>
+        <li>아래 홍대점 매장 포인트를 참고하시되, 매장 내 진행 중인 프로모션·입점 구성은 <strong>현장 POP 기준</strong>으로 담아 주세요.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="store-box">
+    <div class="store-box-title">매장 포인트 — 홍대점 기준</div>
+
+    <div class="store-point">
+      <div class="store-point-title"><span class="store-point-num">01</span><span class="hl">무신사 뷰티 최초로 선보이는 단독 매장</span></div>
+    </div>
+
+    <div class="store-point">
+      <div class="store-point-title"><span class="store-point-num">02</span>할인혜택 및 프로모션</div>
+      <ul>
+        <li>장바구니 20% 쿠폰 (09.11 - 09.13, 5만원 이상 구매 시 1만원 할인)</li>
+        <li>18만원 상당 구디백 증정 이벤트 (4만 5천원 이상 구매 고객 대상, 일 100인, 09.11 - 09.13)</li>
+        <li>주차별 오픈 릴레이 특가, 5,900원부터 시작하는 인기 아이템 특가 이벤트</li>
+        <li>오픈 기념 브랜드 최대 85% 할인 / 기간 : 09.11(금) - 09.30(수)</li>
+        <li>교차 할인 이벤트 - 인근 무신사 스탠다드, 무신사 스토어, 무신사 킥스 홍대 구매 영수증 지참 시 10% 추가 할인 제공 (09.11 - 09.30)</li>
+        <li>(외국인 바이럴 시) 캐셔 여권 인증 시 5만원 이상 구매 시 1만원 할인</li>
+      </ul>
+    </div>
+
+    <div class="store-point">
+      <div class="store-point-title"><span class="store-point-num">03</span>카페 아즈니섬 입점 / 뷰티 온누리 약국 입점</div>
+      <ul>
+        <li>약사의 전문성을 바탕으로 피부 고민 상담부터 맞춤 영양제·의약품까지 만나볼 수 있는 약국 전용 뷰티 제품</li>
+        <li>카페 아즈니섬 입점, 맵 후기 작성 커피 쿠폰 증정 이벤트</li>
+      </ul>
+    </div>
+
+    <div class="store-point">
+      <div class="store-point-title"><span class="store-point-num">04</span>(외국인 바이럴 시) 택스리펀 가능</div>
+    </div>
+
+    <div class="store-point" style="margin-bottom:0">
+      <div class="store-point-title"><span class="store-point-num">05</span>필수 태그 : @musinsa_beauty, @musinsa.store</div>
+    </div>
+  </div>
+</div>
+
+<!-- 제작 가이드 -->
+<div class="section">
+  <div class="section-label">Content Guide</div>
+  <div class="section-title">업로드 가이드</div>
+
+  <div class="note-box">
+    <div class="note-box-title">📌 안내</div>
+    <ul>
+      <li>본 가이드는 <strong>최대한 지켜주시면</strong> 감사드리겠습니다.</li>
+      <li>가이드는 브랜드 상황에 따라 <strong>추후 변동될 수 있으며</strong>, 변동 시 담당자가 별도로 안내드립니다.</li>
+    </ul>
+  </div>
+
+  <div class="must-list">
+    <details class="acc" open>
+      <summary class="acc-head">
+        <span class="acc-icon">🖼️</span>
+        <span class="acc-label"><strong>[요청사항 · 썸네일]</strong> <strong style="color:var(--green)">(필수)</strong></span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <div class="key-info-box">
+          <div>
+            <div class="key-info-group-title">① 썸네일 문구 예시</div>
+            <div class="thumb-copy">
+              <span>‘드디어 오픈한 무신사 단독 뷰티 매장’</span>
+              <span>‘무신사 뷰티 매장 최대 85% 할인’</span>
+              <span>‘어디서도 볼 수 없었던 뷰티 브랜드 총 집합’</span>
+            </div>
+            <div class="key-info-desc">→ <strong>무신사 단독 매장, 할인혜택, 어디서도 볼 수 없었던 힙한 인디브랜드를 모두 만나볼 수 있는 단독공간</strong>인 점이 썸네일 문구에 노출 필수</div>
+          </div>
+          <div>
+            <div class="key-info-group-title">② 로고 · 썸네일 이미지</div>
+            <div class="key-info-desc"><strong>무신사 뷰티 로고 노출 필수</strong> (임의 변형 및 컬러 변경 불가)</div>
+            <div class="key-info-desc" style="margin-top:6px">썸네일 이미지는 <strong>뷰티 매장 전경 or 할인 이벤트 매대</strong>가 드러날 수 있는 컷 (오프라인 매장임이 드러날 수 있는 형태)</div>
+          </div>
+          <div>
+            <div class="key-info-group-title">③ 혜택 · 프로모션 기재</div>
+            <div class="key-info-desc">나레이션 / 영상 자막 / 멘션 내 <strong>할인 혜택 및 프로모션</strong> 기재 요청</div>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="acc" open>
+      <summary class="acc-head">
+        <span class="acc-icon">🔍</span>
+        <span class="acc-label"><strong>[타겟 키워드]</strong> 영상 · 캡션 노출 <strong style="color:var(--green)">(필수)</strong></span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <div class="key-info-box">
+          <div>
+            <div class="key-info-group-title">메인 키워드 — 탭하여 복사</div>
+            <div class="hashtag-wrap" style="margin-bottom:0">
+              <div class="hashtag req">무신사 모공앰플</div>
+            </div>
+          </div>
+          <div>
+            <div class="key-info-group-title">서브 키워드 — 탭하여 복사</div>
+            <div class="hashtag-wrap" style="margin-bottom:0">
+              <div class="hashtag req">잇퓨 모공앰플</div>
+              <div class="hashtag req">율무모공앰플</div>
+            </div>
+          </div>
+        </div>
+        <div class="guide-sub">메인 키워드 <strong>‘무신사 모공앰플’</strong>은 영상 자막(나레이션)과 캡션에 <strong>반드시</strong> 노출해 주세요.<br>서브 키워드 <strong>잇퓨 모공앰플 · 율무모공앰플</strong>도 캡션에 함께 기재해 주세요.</div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">🎬</span>
+        <span class="acc-label"><strong>[필수 촬영 앵글]</strong> <strong style="color:var(--green)">(필수)</strong></span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <div class="guide-sub" style="margin-top:4px">매장 외관 및 전경 → 이벤트 / 프로모션 매대 → 제품 디테일샷이 <strong>유기적으로 연결</strong>될 수 있는 앵글 부탁드리겠습니다.</div>
+        <ul style="margin-top:10px;padding-left:18px;display:flex;flex-direction:column;gap:6px;">
+          <li><strong>매장 전경</strong> — <span data-store="hongdae">무신사 뷰티 홍대 외부 전경 및 다홍빛 건물 색감</span><span data-store="seongsu">무신사 메가스토어 성수 외부 전경 및 건물 외관</span> 잘 담기게 부탁드립니다.</li>
+          <li><strong>이벤트 / 프로모션 매대</strong> — 입점 관련 POP 등 진열 관련 컷 세세히 부탁드립니다.</li>
+          <li><strong>추천 제품 클로즈업 / 구매 제품 떼샷 / 장바구니 떼샷</strong> — 뷰티 제품 발색샷도 선명하게 촬영 부탁드리겠습니다.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">🧴</span>
+        <span class="acc-label"><strong>[노출 제품]</strong> 잇퓨 조닝 · 제품</span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <div class="guide-sub" style="margin-top:4px">브랜드 초청 인플루언서의 경우, <strong>브랜드 선정 차별화 상품 및 조닝 위주</strong>로 녹여주시면 됩니다.</div>
+        <div class="key-info-box">
+          <div>
+            <div class="key-info-group-title">잇퓨 대표 제품</div>
+            <div class="key-info-item">
+              <div class="key-info-name">순율앰플 <span style="font-weight:500;color:var(--text-light)">— 무신사 모공앰플</span></div>
+              <div class="key-info-desc"><strong>스테디셀러 순율크림 라인</strong>으로, 모공과 피부결 집중 케어</div>
+              <div class="key-info-desc">율무포어 성분이 <strong>모공과 피부결</strong>을 집중 케어하는 앰플</div>
+              <div class="key-info-tags">
+                <span class="key-info-tag">율무포어</span>
+                <span class="key-info-tag">펩타이드</span>
+                <span class="key-info-tag">나이아신아마이드</span>
+                <span class="key-info-tag">징크</span>
+              </div>
+            </div>
+          </div>
+          <div class="slogan-box">
+            <div class="slogan-label">Slogan</div>
+            피부 고민과 스킨 솔루션을 잇다, 잇퓨
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">🔗</span>
+        <span class="acc-label"><strong>[공동작업자]</strong> 설정 필수</span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <span class="collab-handle" style="margin-top:6px;display:inline-flex;align-items:center;gap:5px;font-size:13px;color:var(--green);font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;padding:4px 0;">@itfu_official ⎘</span><br>
+        <span class="collab-handle" style="margin-top:4px;display:inline-flex;align-items:center;gap:5px;font-size:13px;color:var(--green);font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;padding:4px 0;">@itfu_global ⎘</span>
+      </div>
+    </details>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 해시태그 -->
+  <div class="hashtag-section">
+    <div class="hashtag-label">해시태그 <span class="required">필수</span></div>
+    <div class="hashtag-wrap">
+      <div class="hashtag req" data-store="hongdae">#무신사뷰티홍대</div>
+      <div class="hashtag req" data-store="seongsu">#무신사메가스토어성수</div>
+      <div class="hashtag req">#무신사뷰티</div>
+      <div class="hashtag req">#MUSINSABEAUTY</div>
+      <div class="hashtag req">#무신사모공앰플</div>
+      <div class="hashtag req">#잇퓨모공앰플</div>
+      <div class="hashtag req">#율무모공앰플</div>
+    </div>
+  </div>
+
+  <div class="hashtag-section">
+    <div class="hashtag-label">계정 태그 <span class="required">필수</span></div>
+    <div class="hashtag-wrap">
+      <div class="hashtag req">@musinsa_beauty</div>
+      <div class="hashtag req">@musinsa.store</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="rec-list">
+    <div class="rec-title">필수 유의 사항</div>
+    <div class="rec-item">
+      공식 매장 명칭 유의 부탁드립니다.
+      <div class="ok-ng">
+        <div><span class="ok">O</span> &nbsp;<span class="hl"><span data-store="hongdae">무신사 뷰티 홍대</span><span data-store="seongsu">무신사 메가스토어 성수</span></span></div>
+        <div><span class="ng">X</span> &nbsp;<span data-store="hongdae">무신사 홍대 뷰티, 무신사 뷰티 스토어</span><span data-store="seongsu">무신사 성수 메가스토어, 무신사 뷰티 성수</span> 등</div>
+      </div>
+    </div>
+    <div class="rec-item">매장 촬영 시 타인의 초상권을 해치지 않도록 유의 (<strong>타인의 얼굴 모자이크 필수</strong>)</div>
+    <div class="rec-item">나레이션 삽입 시, BGM은 무료 음원 사용</div>
+    <div class="rec-item">키메세지 자막이 데드존(화면 가장자리·UI 영역)에 걸치지 않도록 주의</div>
+    <div class="rec-item">영상 길이 <strong>90초 이내</strong> 제작</div>
+  </div>
+
+  <div class="warning-box">
+    ⚠️ <strong>안내된 일정을 반드시 준수해주세요.</strong><br>
+    일정 미준수 시 고료 지급이 어렵습니다.<br><br>
+    공동작업자 설정 및 콘텐츠 2차 활용에 동의하는 것으로 간주됩니다.
+  </div>
+</div>
+
+<!-- 레퍼런스 -->
+<div class="section">
+  <div class="section-label">Reference</div>
+  <div class="section-title">레퍼런스 콘텐츠</div>
+  <div class="ref-note">콘텐츠 제작 참고용 — 탭하여 확인</div>
+  <div class="ref-box">
+    <a href="https://www.instagram.com/reel/DdWG5R9zoyj/" target="_blank" rel="noopener" class="ref-link">
+      <span class="ref-link-label">레퍼런스 1</span>
+      <span class="ref-link-arrow">→</span>
+    </a>
+    <a href="https://www.instagram.com/reel/DdOCi2_Sx8r/" target="_blank" rel="noopener" class="ref-link">
+      <span class="ref-link-label">레퍼런스 2</span>
+      <span class="ref-link-arrow">→</span>
+    </a>
+    <a href="https://www.instagram.com/reel/Dd3cRnIzoPg/" target="_blank" rel="noopener" class="ref-link">
+      <span class="ref-link-label">레퍼런스 3</span>
+      <span class="ref-link-arrow">→</span>
+    </a>
+    <a href="https://www.instagram.com/reel/Ddi5L4lpAZK/" target="_blank" rel="noopener" class="ref-link">
+      <span class="ref-link-label">레퍼런스 4</span>
+      <span class="ref-link-arrow">→</span>
+    </a>
+    <a href="https://www.instagram.com/reel/DbdbNgiC7ca/" target="_blank" rel="noopener" class="ref-link">
+      <span class="ref-link-label">레퍼런스 5</span>
+      <span class="ref-link-arrow">→</span>
+    </a>
+    <a href="https://www.instagram.com/reel/Dbhpj56zmzI/" target="_blank" rel="noopener" class="ref-link">
+      <span class="ref-link-label">레퍼런스 6</span>
+      <span class="ref-link-arrow">→</span>
+    </a>
+    <a href="https://www.instagram.com/reel/DbioC-tPIZD/" target="_blank" rel="noopener" class="ref-link">
+      <span class="ref-link-label">레퍼런스 7</span>
+      <span class="ref-link-arrow">→</span>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>it:fu (잇퓨)</strong><br>
+  본 가이드라인은 선별된 크리에이터에게만 제공되는 자료입니다.<br>
+  문의사항이 있으시면 담당자에게 연락해 주세요.
+</div>
+
+<div class="copy-toast" id="copyToast"></div>
+
+<script>
+  function showToast(text) {
+    const toast = document.getElementById('copyToast');
+    toast.textContent = '"' + text + '" 복사됨';
+    toast.classList.add('show');
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => toast.classList.remove('show'), 1500);
+  }
+
+  // 복사가 아닌 일반 안내용 토스트 ('복사됨' 접미사 없음)
+  function showNotice(text) {
+    const toast = document.getElementById('copyToast');
+    toast.textContent = text;
+    toast.classList.add('show');
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => toast.classList.remove('show'), 2200);
+  }
+
+  // 클립보드 API가 막힌 환경(구형 브라우저·비활성 탭)을 위한 폴백
+  function legacyCopy(text) {
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0;';
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      const ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function copyText(text) {
+    const fallback = () => {
+      if (legacyCopy(text)) showToast(text);
+      else showNotice('복사에 실패했습니다. 텍스트를 길게 눌러 복사해 주세요.');
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(() => showToast(text)).catch(fallback);
+    } else {
+      fallback();
+    }
+  }
+
+  document.querySelectorAll('.hashtag').forEach(el => {
+    el.addEventListener('click', () => {
+      const tag = el.textContent.replace('⎘', '').trim();
+      copyText(tag);
+    });
+  });
+
+  document.querySelectorAll('.collab-handle').forEach(el => {
+    el.addEventListener('click', () => {
+      const handle = el.textContent.replace('⎘', '').trim();
+      copyText(handle);
+    });
+  });
+</script>
+
+<script>
+  // 방문 지점 — 매장 안내 토글과 신청서 선택을 서로 연동
+  function setBranch(b) {
+    document.body.setAttribute('data-branch', b);
+    document.querySelectorAll('[data-branch-btn]').forEach(btn => {
+      const on = btn.dataset.branchBtn === b;
+      btn.classList.toggle('on', on);
+      btn.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  }
+  document.querySelectorAll('[data-branch-btn]').forEach(btn => {
+    btn.addEventListener('click', () => setBranch(btn.dataset.branchBtn));
+  });
+  document.querySelectorAll('input[name="branch"]').forEach(r => {
+    r.addEventListener('change', () => setBranch(r.value === '성수점' ? 'seongsu' : 'hongdae'));
+  });
+  setBranch('hongdae');
+</script>
+
+</body>
+</html>
