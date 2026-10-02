@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="gated">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -251,6 +251,75 @@
     }
     .hub-card.disabled { pointer-events: none; opacity: 0.78; }
     .hub-card.disabled .hub-card-cta { color: var(--text-light); }
+    .hub-card-status.closed { background: rgba(26, 42, 53, 0.62); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+    .hub-card.ended .hub-card-thumb img { filter: grayscale(0.6); }
+
+    /* FOLDER */
+    .hub-folder {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    .hub-folder-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .hub-folder-head::-webkit-details-marker { display: none; }
+    .hub-folder-icon {
+      flex: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green);
+    }
+    .hub-folder-info { flex: 1; min-width: 0; }
+    .hub-folder-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+    .hub-folder-meta {
+      display: block;
+      font-size: 12px;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+    .hub-folder-status {
+      flex: none;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #ffffff;
+      background: rgba(26, 42, 53, 0.62);
+      border-radius: 20px;
+      padding: 5px 11px;
+    }
+    .hub-folder-status.live { background: var(--green); }
+    .hub-folder-chevron {
+      flex: none;
+      color: var(--text-light);
+      transition: transform 0.2s;
+    }
+    .hub-folder[open] .hub-folder-chevron { transform: rotate(180deg); }
+    .hub-folder-body {
+      display: grid;
+      gap: 14px;
+      padding: 4px 14px 14px;
+    }
 
     /* FOOTER */
     .footer {
@@ -282,9 +351,132 @@
       .hub-list { padding: 16px 14px 4px; }
       .hub-card-title { font-size: 16px; }
     }
+
+    /* PASSWORD GATE */
+    html.gated, html.gated body { overflow: hidden; height: 100%; }
+    .gate {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 24px;
+    }
+    html:not(.gated) .gate { display: none; }
+    .gate-box {
+      width: 100%;
+      max-width: 340px;
+      text-align: center;
+    }
+    .gate-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+    }
+    .gate-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-top: 18px;
+    }
+    .gate-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 21px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-top: 10px;
+    }
+    .gate-desc {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-top: 12px;
+    }
+    .gate-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 26px;
+    }
+    .gate-input {
+      width: 100%;
+      padding: 15px 16px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 16px;
+      text-align: center;
+      letter-spacing: 0.35em;
+      color: var(--text-dark);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .gate-input::placeholder { letter-spacing: 0.3em; color: var(--green-pale); }
+    .gate-input:focus { border-color: var(--green); }
+    .gate-btn {
+      padding: 15px 16px;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #fff;
+      background: var(--green);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .gate-btn:active { opacity: 0.75; }
+    .gate-error {
+      min-height: 18px;
+      margin-top: 12px;
+      font-size: 12px;
+      color: #C2565B;
+    }
+    .gate-note {
+      margin-top: 28px;
+      font-size: 11px;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
   </style>
+  <script>
+    (function () {
+      try {
+        if (sessionStorage.getItem('itfu-hub-unlocked') === '1') {
+          document.documentElement.classList.remove('gated');
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
+<!-- PASSWORD GATE -->
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <div class="gate-mark">it:fu</div>
+    <div class="gate-eyebrow">Protected</div>
+    <div class="gate-title">잇퓨 캠페인 허브</div>
+    <p class="gate-desc">담당자에게 전달받은 비밀번호를 입력해 주세요.</p>
+    <form class="gate-form" id="gateForm" autocomplete="off">
+      <input class="gate-input" id="gateInput" type="password" inputmode="numeric" placeholder="••••" aria-label="비밀번호" autocomplete="off">
+      <button class="gate-btn" type="submit">확인</button>
+    </form>
+    <div class="gate-error" id="gateError" role="alert"></div>
+    <div class="gate-note">
+      본 허브는 선별된 크리에이터에게만 제공되는 자료입니다.
+      <noscript><br>확인을 위해 브라우저의 자바스크립트를 허용해 주세요.</noscript>
+    </div>
+  </div>
+</div>
+
 
 <!-- BANNER -->
 <div class="banner-wrap">
@@ -308,69 +500,195 @@
 <!-- CARD LIST -->
 <div class="hub-list">
 
-  <!-- 1. 잇퓨 앰플/순율크림 가이드 -->
-  <a href="itfu/" class="hub-card">
+  <!-- 4. 잇퓨 가이드라인 — Campaign 04 (통합) -->
+  <a href="campaign-04/" class="hub-card">
     <div class="hub-card-thumb">
-      <span class="hub-card-badge">Campaign 01</span>
+      <span class="hub-card-badge">Campaign 04</span>
       <span class="hub-card-status live">진행중</span>
-      <img src="itfu/image/제품.PNG" alt="잇퓨 제품">
+      <img src="campaign-04/image/제품.PNG" alt="잇퓨 제품">
     </div>
     <div class="hub-card-body">
       <div class="hub-card-eyebrow">Reels Campaign</div>
-      <div class="hub-card-title">잇퓨 가이드라인</div>
+      <div class="hub-card-title">잇퓨 가이드라인 통합</div>
       <p class="hub-card-desc">
-        율무 앰플·순율크림 중심의 릴스 캠페인 가이드라인입니다. Before/After 콘텐츠와 핵심 성분 소구 가이드를 확인하세요.
+        순율앰플(율무 모공앰플) 중심의 릴스 캠페인 통합 가이드라인입니다. 제작 가이드와 핵심 성분 소구 포인트를 확인하세요.
       </p>
       <div class="hub-card-tags">
         <span class="hub-card-tag">릴스</span>
-        <span class="hub-card-tag">순율크림</span>
+        <span class="hub-card-tag">모공앰플</span>
         <span class="hub-card-tag">순율앰플</span>
       </div>
       <span class="hub-card-cta">가이드 보기 →</span>
     </div>
   </a>
 
-  <!-- 2. 순율크림 + 클렌징오일 가이드 -->
-  <a href="cleansing-oil/" class="hub-card">
-    <div class="hub-card-thumb">
-      <span class="hub-card-badge">Campaign 02</span>
-      <span class="hub-card-status live">진행중</span>
-      <img src="cleansing-oil/image/제품.PNG" alt="순율크림 + 클렌징오일">
-    </div>
-    <div class="hub-card-body">
-      <div class="hub-card-eyebrow">New Campaign</div>
-      <div class="hub-card-title">순율크림 + 클렌징오일</div>
-      <p class="hub-card-desc">
-        리페어 테라피 순율 크림과 딥 포어 그레인 클렌징 오일을 함께 소개하는 캠페인 가이드라인입니다. 클렌징 루틴과 핵심 성분 가이드를 확인하세요.
-      </p>
-      <div class="hub-card-tags">
-        <span class="hub-card-tag">순율크림</span>
-        <span class="hub-card-tag">클렌징오일</span>
-      </div>
-      <span class="hub-card-cta">가이드 보기 →</span>
-    </div>
-  </a>
+  <!-- FOLDER: 26년 10월 (오프라인) -->
+  <details class="hub-folder" open>
+    <summary class="hub-folder-head">
+      <span class="hub-folder-icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      </span>
+      <span class="hub-folder-info">
+        <span class="hub-folder-title">26년 10월 (오프라인)</span>
+        <span class="hub-folder-meta">캠페인 3개</span>
+      </span>
+      <span class="hub-folder-status live">진행중</span>
+      <svg class="hub-folder-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="hub-folder-body">
 
-  <!-- 3. 히알앰플 + 쿨링패드 가이드 -->
-  <a href="hyal-cooling/" class="hub-card">
-    <div class="hub-card-thumb">
-      <span class="hub-card-badge">Campaign 03</span>
-      <span class="hub-card-status live">진행중</span>
-      <img src="hyal-cooling/image/제품.PNG" alt="히알앰플 + 쿨링패드">
-    </div>
-    <div class="hub-card-body">
-      <div class="hub-card-eyebrow">New Campaign</div>
-      <div class="hub-card-title">히알앰플 + 쿨링패드</div>
-      <p class="hub-card-desc">
-        히알루로닉 레이어 수딩 앰플과 히알루로닉 카테킨 수딩 패드를 함께 소개하는 캠페인 가이드라인입니다. 수분·진정 루틴과 핵심 성분 가이드를 확인하세요.
-      </p>
-      <div class="hub-card-tags">
-        <span class="hub-card-tag">히알앰플</span>
-        <span class="hub-card-tag">쿨링패드</span>
+    <!-- 5. 잇퓨 가이드라인 — Campaign 05 (오프라인) -->
+    <a href="campaign-05/" class="hub-card">
+      <div class="hub-card-thumb">
+        <span class="hub-card-badge">Campaign 05</span>
+        <span class="hub-card-status live">진행중</span>
+        <img src="campaign-05/image/제품.PNG" alt="잇퓨 제품">
       </div>
-      <span class="hub-card-cta">가이드 보기 →</span>
+      <div class="hub-card-body">
+        <div class="hub-card-eyebrow">Reels Campaign</div>
+        <div class="hub-card-title">잇퓨 가이드라인 통합</div>
+        <p class="hub-card-desc">
+          순율앰플(율무 모공앰플) 중심의 릴스 캠페인 통합 가이드라인입니다. 제작 가이드와 핵심 성분 소구 포인트를 확인하세요.
+        </p>
+        <div class="hub-card-tags">
+          <span class="hub-card-tag">릴스</span>
+          <span class="hub-card-tag">모공앰플</span>
+          <span class="hub-card-tag">순율앰플</span>
+        </div>
+        <span class="hub-card-cta">가이드 보기 →</span>
+      </div>
+    </a>
+
+    <!-- 6. 잇퓨 가이드라인 — Campaign 06 (오프라인) -->
+    <a href="campaign-06/" class="hub-card">
+      <div class="hub-card-thumb">
+        <span class="hub-card-badge">Campaign 06</span>
+        <span class="hub-card-status live">진행중</span>
+        <img src="campaign-06/image/제품.PNG" alt="잇퓨 제품">
+      </div>
+      <div class="hub-card-body">
+        <div class="hub-card-eyebrow">Reels Campaign</div>
+        <div class="hub-card-title">잇퓨 가이드라인 통합</div>
+        <p class="hub-card-desc">
+          순율앰플(율무 모공앰플) 중심의 릴스 캠페인 통합 가이드라인입니다. 제작 가이드와 핵심 성분 소구 포인트를 확인하세요.
+        </p>
+        <div class="hub-card-tags">
+          <span class="hub-card-tag">릴스</span>
+          <span class="hub-card-tag">모공앰플</span>
+          <span class="hub-card-tag">순율앰플</span>
+        </div>
+        <span class="hub-card-cta">가이드 보기 →</span>
+      </div>
+    </a>
+
+    <!-- 7. 잇퓨 가이드라인 — Campaign 07 (오프라인) -->
+    <a href="campaign-07/" class="hub-card">
+      <div class="hub-card-thumb">
+        <span class="hub-card-badge">Campaign 07</span>
+        <span class="hub-card-status live">진행중</span>
+        <img src="campaign-07/image/제품.PNG" alt="잇퓨 제품">
+      </div>
+      <div class="hub-card-body">
+        <div class="hub-card-eyebrow">Reels Campaign</div>
+        <div class="hub-card-title">잇퓨 가이드라인 통합</div>
+        <p class="hub-card-desc">
+          순율앰플(율무 모공앰플) 중심의 릴스 캠페인 통합 가이드라인입니다. 제작 가이드와 핵심 성분 소구 포인트를 확인하세요.
+        </p>
+        <div class="hub-card-tags">
+          <span class="hub-card-tag">릴스</span>
+          <span class="hub-card-tag">모공앰플</span>
+          <span class="hub-card-tag">순율앰플</span>
+        </div>
+        <span class="hub-card-cta">가이드 보기 →</span>
+      </div>
+    </a>
+
     </div>
-  </a>
+  </details>
+
+  <!-- FOLDER: 26년 추석 (모집종료) -->
+  <details class="hub-folder">
+    <summary class="hub-folder-head">
+      <span class="hub-folder-icon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      </span>
+      <span class="hub-folder-info">
+        <span class="hub-folder-title">26년 추석</span>
+        <span class="hub-folder-meta">캠페인 3개</span>
+      </span>
+      <span class="hub-folder-status">모집종료</span>
+      <svg class="hub-folder-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+    </summary>
+    <div class="hub-folder-body">
+
+    <!-- 1. 잇퓨 가이드라인 — Campaign 01 -->
+    <a href="itfu/" class="hub-card ended">
+      <div class="hub-card-thumb">
+        <span class="hub-card-badge">Campaign 01</span>
+        <span class="hub-card-status closed">모집종료</span>
+        <img src="itfu/image/제품.PNG" alt="잇퓨 제품">
+      </div>
+      <div class="hub-card-body">
+        <div class="hub-card-eyebrow">Reels Campaign</div>
+        <div class="hub-card-title">잇퓨 가이드라인 5만원</div>
+        <p class="hub-card-desc">
+          순율앰플(율무 모공앰플) 중심의 릴스 캠페인 가이드라인입니다. 추석 이벤트 소구와 핵심 성분 가이드를 확인하세요.
+        </p>
+        <div class="hub-card-tags">
+          <span class="hub-card-tag">릴스</span>
+          <span class="hub-card-tag">모공앰플</span>
+          <span class="hub-card-tag">순율앰플</span>
+        </div>
+        <span class="hub-card-cta">가이드 보기 →</span>
+      </div>
+    </a>
+
+    <!-- 2. 잇퓨 가이드라인 — Campaign 02 -->
+    <a href="campaign-02/" class="hub-card ended">
+      <div class="hub-card-thumb">
+        <span class="hub-card-badge">Campaign 02</span>
+        <span class="hub-card-status closed">모집종료</span>
+        <img src="campaign-02/image/제품.PNG" alt="잇퓨 제품">
+      </div>
+      <div class="hub-card-body">
+        <div class="hub-card-eyebrow">Reels Campaign</div>
+        <div class="hub-card-title">잇퓨 가이드라인 10만원</div>
+        <p class="hub-card-desc">
+          순율앰플(율무 모공앰플) 중심의 릴스 캠페인 가이드라인입니다. 추석 이벤트 소구와 핵심 성분 가이드를 확인하세요.
+        </p>
+        <div class="hub-card-tags">
+          <span class="hub-card-tag">릴스</span>
+          <span class="hub-card-tag">모공앰플</span>
+          <span class="hub-card-tag">순율앰플</span>
+        </div>
+        <span class="hub-card-cta">가이드 보기 →</span>
+      </div>
+    </a>
+
+    <!-- 3. 잇퓨 가이드라인 — Campaign 03 -->
+    <a href="campaign-03/" class="hub-card ended">
+      <div class="hub-card-thumb">
+        <span class="hub-card-badge">Campaign 03</span>
+        <span class="hub-card-status closed">모집종료</span>
+        <img src="campaign-03/image/제품.PNG" alt="잇퓨 제품">
+      </div>
+      <div class="hub-card-body">
+        <div class="hub-card-eyebrow">Reels Campaign</div>
+        <div class="hub-card-title">잇퓨 가이드라인 20만원</div>
+        <p class="hub-card-desc">
+          순율앰플(율무 모공앰플) 중심의 릴스 캠페인 가이드라인입니다. 추석 이벤트 소구와 핵심 성분 가이드를 확인하세요.
+        </p>
+        <div class="hub-card-tags">
+          <span class="hub-card-tag">릴스</span>
+          <span class="hub-card-tag">모공앰플</span>
+          <span class="hub-card-tag">순율앰플</span>
+        </div>
+        <span class="hub-card-cta">가이드 보기 →</span>
+      </div>
+    </a>
+
+    </div>
+  </details>
 
 </div>
 
@@ -381,5 +699,34 @@
   문의사항이 있으시면 담당자에게 연락해 주세요.
 </div>
 
+<script>
+  (function () {
+    var PASSCODE = '0907';
+    var root = document.documentElement;
+    if (!root.classList.contains('gated')) return;
+
+    var gate = document.getElementById('gate');
+    var form = document.getElementById('gateForm');
+    var input = document.getElementById('gateInput');
+    var error = document.getElementById('gateError');
+
+    input.focus();
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (input.value.trim() === PASSCODE) {
+        try { sessionStorage.setItem('itfu-hub-unlocked', '1'); } catch (err) {}
+        root.classList.remove('gated');
+        gate.remove();
+      } else {
+        error.textContent = '비밀번호가 올바르지 않습니다.';
+        input.value = '';
+        input.focus();
+      }
+    });
+
+    input.addEventListener('input', function () { error.textContent = ''; });
+  })();
+</script>
 </body>
 </html>
