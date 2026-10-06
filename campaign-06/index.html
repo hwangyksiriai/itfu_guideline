@@ -1059,6 +1059,28 @@
     .section { scroll-margin-top: 12px; }
     body.has-float-nav .footer { padding-bottom: calc(36px + 64px + env(safe-area-inset-bottom, 0px)); }
     body.has-float-nav .copy-toast { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+
+    /* MOBILE OPTIMIZATION 2 */
+    .rank-item { gap: 10px; }
+    .rank-item span { flex: 1; min-width: 0; }
+    .rank-item b { flex: none; white-space: nowrap; }
+    .float-nav a { min-height: 40px; }
+    .footer { color: rgba(255,255,255,0.78); }
+    @media (max-width: 480px) {
+      .section-label { font-size: 10.5px; }
+      .hashtag { font-size: 12.5px; }
+      .hashtag-label .required { font-size: 11px; }
+      .form-label .opt { font-size: 12px; }
+      .branch-opt span small { font-size: 12px; }
+      .footer { font-size: 12px; }
+      .float-nav a { font-size: 13.5px; padding: 0 15px; }
+    }
+    @media (max-width: 360px) {
+      .rank-item { padding: 10px 12px; font-size: 12.5px; }
+      .rank-item b { font-size: 13.5px; }
+      .hashtag { font-size: 12px; }
+      .header-sub { font-size: 9.5px; }
+    }
   </style>
 </head>
 <body data-branch="hongdae">
