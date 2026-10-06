@@ -1624,6 +1624,9 @@
       a.textContent = NAMES[key];
       a.addEventListener('click', e => {
         e.preventDefault();
+        lockIdx = i;
+        lockUntil = Date.now() + 1200;
+        setActive(i);
         const y = sec.getBoundingClientRect().top + window.scrollY - 12;
         window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
         history.replaceState(null, '', '#' + sec.id);
@@ -1636,19 +1639,22 @@
     document.body.classList.add('has-float-nav');
 
     const banner = document.querySelector('.banner-wrap');
-    let current = -1;
+    let current = -1, lockIdx = -1, lockUntil = 0;
+    function setActive(idx) {
+      if (idx === current) return;
+      current = idx;
+      links.forEach((a, i) => a.classList.toggle('on', i === idx));
+      const on = links[idx];
+      inner.scrollTo({ left: on.offsetLeft - inner.clientWidth / 2 + on.offsetWidth / 2, behavior: 'smooth' });
+    }
     function update() {
       const showAt = Math.max(160, banner ? banner.offsetTop + banner.offsetHeight - 20 : 200);
       nav.classList.toggle('show', window.scrollY > showAt);
       let idx = 0;
       const line = window.innerHeight * 0.35;
       sections.forEach((sec, i) => { if (sec.getBoundingClientRect().top <= line) idx = i; });
-      if (idx !== current) {
-        current = idx;
-        links.forEach((a, i) => a.classList.toggle('on', i === idx));
-        const on = links[idx];
-        inner.scrollTo({ left: on.offsetLeft - inner.clientWidth / 2 + on.offsetWidth / 2, behavior: 'smooth' });
-      }
+      if (Date.now() < lockUntil) { lockUntil = Date.now() + 300; idx = lockIdx; }
+      setActive(idx);
     }
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
