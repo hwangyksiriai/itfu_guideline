@@ -1840,7 +1840,8 @@
       a.textContent = NAMES[key];
       a.addEventListener('click', e => {
         e.preventDefault();
-        sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const y = sec.getBoundingClientRect().top + window.scrollY - (nav.offsetHeight || 60) - 8;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
         history.replaceState(null, '', '#' + sec.id);
       });
       inner.appendChild(a);
@@ -1852,10 +1853,10 @@
     const banner = document.querySelector('.banner-wrap');
     let current = -1;
     function update() {
-      const showAt = banner ? banner.offsetTop + banner.offsetHeight - 20 : 200;
+      const showAt = Math.max(160, banner ? banner.offsetTop + banner.offsetHeight - 20 : 200);
       nav.classList.toggle('show', window.scrollY > showAt);
       let idx = 0;
-      sections.forEach((sec, i) => { if (sec.getBoundingClientRect().top <= 90) idx = i; });
+      sections.forEach((sec, i) => { if (sec.getBoundingClientRect().top <= 110) idx = i; });
       if (idx !== current) {
         current = idx;
         links.forEach((a, i) => a.classList.toggle('on', i === idx));
@@ -1865,6 +1866,9 @@
     }
     window.addEventListener('scroll', update, { passive: true });
     window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    const bannerImg = banner && banner.querySelector('img');
+    if (bannerImg && !bannerImg.complete) bannerImg.addEventListener('load', update);
     update();
   })();
 </script>
