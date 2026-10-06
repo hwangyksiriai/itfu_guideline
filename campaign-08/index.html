@@ -1012,6 +1012,50 @@
       .info-key { min-width: 60px; }
     }
     .banner-overlay { background: linear-gradient(90deg, rgba(58,42,34,0.55) 0%, rgba(58,42,34,0.25) 55%, rgba(58,42,34,0) 80%); }
+
+    /* FLOATING SECTION NAV */
+    .float-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      transform: translateY(-110%);
+      transition: transform 0.25s ease;
+      background: rgba(251, 247, 242, 0.94);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding-top: env(safe-area-inset-top, 0px);
+    }
+    .float-nav.show { transform: translateY(0); }
+    .float-nav-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 10px 16px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .float-nav-inner::-webkit-scrollbar { display: none; }
+    .float-nav a {
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text-mid);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.15s, color 0.15s;
+    }
+    .float-nav a.on { background: var(--green); border-color: var(--green); color: #fff; }
+    .section { scroll-margin-top: 68px; }
   </style>
 </head>
 <body data-branch="hongdae">
@@ -1549,6 +1593,61 @@
     r.addEventListener('change', () => setBranch(r.value === '성수점' ? 'seongsu' : 'hongdae'));
   });
   setBranch('hongdae');
+</script>
+
+<script>
+  // 영역 이동 플로팅 메뉴 — 페이지에 있는 섹션만 자동으로 만듦
+  (function () {
+    const NAMES = {
+      'About Brand': '브랜드', 'Campaign Info': '개요', 'Store Info': '방문 매장',
+      'Content Guide': '업로드 가이드', 'Reference': '레퍼런스', 'Application': '캠페인 신청', 'Settlement': '정산'
+    };
+    const sections = [...document.querySelectorAll('.section')].filter(sec => {
+      const label = sec.querySelector('.section-label');
+      return label && NAMES[label.textContent.trim()];
+    });
+    if (!sections.length) return;
+
+    const nav = document.createElement('nav');
+    nav.className = 'float-nav';
+    nav.setAttribute('aria-label', '영역 이동');
+    const inner = document.createElement('div');
+    inner.className = 'float-nav-inner';
+    const links = sections.map((sec, i) => {
+      const key = sec.querySelector('.section-label').textContent.trim();
+      sec.id = sec.id || 'sec-' + i;
+      const a = document.createElement('a');
+      a.href = '#' + sec.id;
+      a.textContent = NAMES[key];
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', '#' + sec.id);
+      });
+      inner.appendChild(a);
+      return a;
+    });
+    nav.appendChild(inner);
+    document.body.appendChild(nav);
+
+    const banner = document.querySelector('.banner-wrap');
+    let current = -1;
+    function update() {
+      const showAt = banner ? banner.offsetTop + banner.offsetHeight - 20 : 200;
+      nav.classList.toggle('show', window.scrollY > showAt);
+      let idx = 0;
+      sections.forEach((sec, i) => { if (sec.getBoundingClientRect().top <= 90) idx = i; });
+      if (idx !== current) {
+        current = idx;
+        links.forEach((a, i) => a.classList.toggle('on', i === idx));
+        const on = links[idx];
+        inner.scrollTo({ left: on.offsetLeft - inner.clientWidth / 2 + on.offsetWidth / 2, behavior: 'smooth' });
+      }
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  })();
 </script>
 
 </body>
