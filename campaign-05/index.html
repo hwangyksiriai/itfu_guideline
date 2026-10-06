@@ -7,16 +7,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Montserrat:wght@300;400&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --green: #5BA3C9;
-      --green-light: #7BBCD8;
-      --green-pale: #B8DCF0;
-      --cream: #F5FAFD;
-      --warm-white: #EEF6FB;
-      --text-dark: #1A2A35;
-      --text-mid: #3D6B85;
-      --text-light: #6899B0;
-      --border: #C5E0EF;
-      --tag-bg: #DFF0F9;
+      --green: #A96B47;
+      --green-light: #C99372;
+      --green-pale: #ECD3BF;
+      --cream: #FBF7F2;
+      --warm-white: #F6EEE6;
+      --text-dark: #3A2A22;
+      --text-mid: #7A5644;
+      --text-light: #A3826E;
+      --border: #EAD8C8;
+      --tag-bg: #F7EADF;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -211,13 +211,13 @@
       flex-shrink: 0;
     }
     .info-val { color: white; font-weight: 500; line-height: 1.6; }
-    .info-val strong { color: #C5E8F5; }
+    .info-val strong { color: #F0DCCB; }
 
     .info-warning {
       font-size: 12px;
       color: var(--text-mid);
-      background: #EAF5FB;
-      border: 1px solid #B8D8EC;
+      background: #F8EFE7;
+      border: 1px solid #E7CDB8;
       border-radius: 8px;
       padding: 10px 14px;
       margin-bottom: 20px;
@@ -343,13 +343,13 @@
     }
 
     .rec-list {
-      background: #EAF5FB;
-      border: 1px solid #B8D8EC;
+      background: #F8EFE7;
+      border: 1px solid #E7CDB8;
       border-radius: 12px;
       padding: 18px 20px;
     }
     .rec-title { font-size: 12px; font-weight: 700; color: var(--green); margin-bottom: 12px; }
-    .rec-item { font-size: 12.5px; color: var(--text-mid); padding: 5px 0; border-bottom: 1px solid #B8D8EC; line-height: 1.6; }
+    .rec-item { font-size: 12.5px; color: var(--text-mid); padding: 5px 0; border-bottom: 1px solid #E7CDB8; line-height: 1.6; }
     .rec-item:last-child { border-bottom: none; }
 
     /* HASHTAG */
@@ -386,16 +386,16 @@
 
     /* WARNING */
     .warning-box {
-      background: #EDF6FF;
-      border: 1px solid #90BFDB;
+      background: #FBF2EA;
+      border: 1px solid #CFA488;
       border-radius: 12px;
       padding: 16px 18px;
       font-size: 12.5px;
-      color: #2A5A75;
+      color: #6E4632;
       line-height: 1.7;
       margin-top: 16px;
     }
-    .warning-box strong { color: #1A3A4F; }
+    .warning-box strong { color: #4E3326; }
 
     /* REFERENCE */
     .ref-box {
@@ -458,7 +458,7 @@
       bottom: max(32px, env(safe-area-inset-bottom, 32px));
       left: 50%;
       transform: translateX(-50%) translateY(10px);
-      background: rgba(18, 42, 58, 0.9);
+      background: rgba(58,38,28, 0.9);
       color: white;
       font-size: 13px;
       padding: 10px 20px;
@@ -520,7 +520,7 @@
 
     /* MAIN HOOK */
     .deal-box {
-      background: linear-gradient(160deg, var(--green) 0%, #4A8FB5 100%);
+      background: linear-gradient(160deg, var(--green) 0%, #93583A 100%);
       border-radius: 14px;
       padding: 20px;
       margin-bottom: 14px;
@@ -821,7 +821,7 @@
       cursor: pointer;
       -webkit-tap-highlight-color: transparent;
     }
-    .branch-toggle button.on { background: #fff; color: var(--green); box-shadow: 0 1px 6px rgba(91,163,201,0.18); }
+    .branch-toggle button.on { background: #fff; color: var(--green); box-shadow: 0 1px 6px rgba(169,107,71,0.18); }
     body[data-branch="hongdae"] [data-store="seongsu"],
     body[data-branch="seongsu"] [data-store="hongdae"] { display: none !important; }
 
@@ -973,7 +973,7 @@
     /* MOBILE OPTIMIZATION */
     .banner-overlay .header-eyebrow,
     .banner-overlay .header-title,
-    .banner-overlay .header-sub { text-shadow: 0 1px 8px rgba(26, 42, 53, 0.35); }
+    .banner-overlay .header-sub { text-shadow: 0 1px 8px rgba(58,42,34, 0.35); }
     .collab-handle { min-height: 44px; }
     .settle-copy-btn { min-height: 44px; }
     .branch-options { align-items: stretch; }
@@ -1051,7 +1051,7 @@
     </div>
     <div class="info-row">
       <div class="info-key">제공 제품</div>
-      <div class="info-val"><strong>순율앰플</strong><br>인플루언서 자택으로 발송</div>
+      <div class="info-val"><strong>스킨 리밸런싱 순율 앰플</strong><br>인플루언서 자택으로 발송</div>
     </div>
     <div class="info-row">
       <div class="info-key">업로드</div>
@@ -1089,7 +1089,7 @@
   <div class="product-list">
     <div class="product-box">
       <img src="image/순율앰플.webp" alt="잇퓨 스킨 리밸런싱 순율앰플" loading="lazy" style="width:100%;border-radius:10px;display:block;">
-      <div class="product-name">순율앰플</div>
+      <div class="product-name">스킨 리밸런싱 순율 앰플</div>
       <a href="https://it-fu.com/product/%EC%B6%9C%EC%8B%9C%EC%99%84%ED%8C%90%EB%AA%A8%EA%B3%B5%EA%B0%9C%EC%84%A0-%EC%8A%A4%ED%82%A8-%EB%A6%AC%EB%B0%B8%EB%9F%B0%EC%8B%B1-%EC%88%9C%EC%9C%A8-%EC%95%B0%ED%94%8C/28/category/72/display/1/" target="_blank" rel="noopener" class="product-link-btn">제품 상세 보기 →</a>
     </div>
   </div>
