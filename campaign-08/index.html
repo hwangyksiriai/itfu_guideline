@@ -1016,15 +1016,16 @@
     /* FLOATING SECTION NAV */
     .float-nav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      bottom: 0; left: 0; right: 0;
       z-index: 50;
-      transform: translateY(-110%);
+      transform: translateY(110%);
       transition: transform 0.25s ease;
       background: rgba(251, 247, 242, 0.94);
       -webkit-backdrop-filter: blur(8px);
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      padding-top: env(safe-area-inset-top, 0px);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 16px rgba(58, 42, 34, 0.08);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
     }
     .float-nav.show { transform: translateY(0); }
     .float-nav-inner {
@@ -1055,7 +1056,9 @@
       transition: background 0.15s, color 0.15s;
     }
     .float-nav a.on { background: var(--green); border-color: var(--green); color: #fff; }
-    .section { scroll-margin-top: 68px; }
+    .section { scroll-margin-top: 12px; }
+    body.has-float-nav .footer { padding-bottom: calc(36px + 64px + env(safe-area-inset-bottom, 0px)); }
+    body.has-float-nav .copy-toast { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
   </style>
 </head>
 <body data-branch="hongdae">
@@ -1621,7 +1624,7 @@
       a.textContent = NAMES[key];
       a.addEventListener('click', e => {
         e.preventDefault();
-        const y = sec.getBoundingClientRect().top + window.scrollY - (nav.offsetHeight || 60) - 8;
+        const y = sec.getBoundingClientRect().top + window.scrollY - 12;
         window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
         history.replaceState(null, '', '#' + sec.id);
       });
@@ -1630,6 +1633,7 @@
     });
     nav.appendChild(inner);
     document.body.appendChild(nav);
+    document.body.classList.add('has-float-nav');
 
     const banner = document.querySelector('.banner-wrap');
     let current = -1;
@@ -1637,7 +1641,7 @@
       const showAt = Math.max(160, banner ? banner.offsetTop + banner.offsetHeight - 20 : 200);
       nav.classList.toggle('show', window.scrollY > showAt);
       let idx = 0;
-      sections.forEach((sec, i) => { if (sec.getBoundingClientRect().top <= 110) idx = i; });
+      sections.forEach((sec, i) => { if (sec.getBoundingClientRect().top <= 60) idx = i; });
       if (idx !== current) {
         current = idx;
         links.forEach((a, i) => a.classList.toggle('on', i === idx));
