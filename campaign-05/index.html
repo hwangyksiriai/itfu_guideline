@@ -1860,7 +1860,8 @@
       const showAt = Math.max(160, banner ? banner.offsetTop + banner.offsetHeight - 20 : 200);
       nav.classList.toggle('show', window.scrollY > showAt);
       let idx = 0;
-      sections.forEach((sec, i) => { if (sec.getBoundingClientRect().top <= 60) idx = i; });
+      const line = window.innerHeight * 0.35;
+      sections.forEach((sec, i) => { if (sec.getBoundingClientRect().top <= line) idx = i; });
       if (idx !== current) {
         current = idx;
         links.forEach((a, i) => a.classList.toggle('on', i === idx));
