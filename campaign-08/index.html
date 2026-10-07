@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>it:fu — 인플루언서 가이드라인</title>
+  <meta name="description" content="스킨 리밸런싱 순율 앰플 · 잇퓨모공앰플 리뷰 캠페인 (무신사 매장 방문 포함)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="it:fu">
+  <meta property="og:title" content="잇퓨 인플루언서 가이드라인">
+  <meta property="og:description" content="스킨 리밸런싱 순율 앰플 · 잇퓨모공앰플 리뷰 캠페인 (무신사 매장 방문 포함)">
+  <meta property="og:image" content="https://itfu-guideline.vercel.app/og-soonyul.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Montserrat:wght@300;400&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #A96B47;
+      --green-light: #C99372;
+      --green-pale: #ECD3BF;
+      --cream: #FBF7F2;
+      --warm-white: #F6EEE6;
+      --text-dark: #3A2A22;
+      --text-mid: #7A5644;
+      --text-light: #A3826E;
+      --border: #EAD8C8;
+      --tag-bg: #F7EADF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    /* BANNER */
+    .banner-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .banner-wrap img {
+      width: 100%;
+      display: block;
+    }
+    .banner-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: left;
+      padding: 0 36px;
+    }
+    .header-eyebrow {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      font-weight: 300;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .header-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .header-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 300;
+      color: #ffffff;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 480px) {
+      .header-title { font-size: 18px; }
+      .banner-overlay { padding: 0 24px; }
+    }
+
+    /* SECTION */
+    .section {
+      padding: 48px 28px;
+      padding-left: max(28px, env(safe-area-inset-left, 28px));
+      padding-right: max(28px, env(safe-area-inset-right, 28px));
+      border-bottom: 1px solid var(--border);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .section:last-child { border-bottom: none; }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--green);
+    }
+    .section-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    /* ABOUT */
+    .about-lead {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.8;
+    }
+    .brand-img-wrap {
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+    }
+    .brand-img-wrap img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .about-grid { display: grid; gap: 12px; }
+    .about-item {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .about-item-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+    .about-item-desc {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+    .brand-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background: var(--green);
+      color: white;
+      font-size: 12.5px;
+      font-weight: 600;
+      border-radius: 20px;
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      min-height: 44px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .brand-link-btn:active { opacity: 0.75; }
+
+    /* INFO BOX */
+    .info-box {
+      background: var(--green);
+      color: white;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 12px;
+    }
+    .info-box-title {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--green-pale);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 13.5px;
+      margin-bottom: 10px;
+    }
+    .info-row:last-child { margin-bottom: 0; }
+    .info-key {
+      min-width: 70px;
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    .info-val { color: white; font-weight: 500; line-height: 1.6; }
+    .info-val strong { color: #F0DCCB; }
+
+    .info-warning {
+      font-size: 12px;
+      color: var(--text-mid);
+      background: #F8EFE7;
+      border: 1px solid #E7CDB8;
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 20px;
+    }
+
+    /* PRODUCT */
+    .product-list { display: grid; gap: 12px; }
+    .product-box {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .product-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+    .product-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 11px 16px;
+      background: var(--tag-bg);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 20px;
+      text-decoration: none;
+      align-self: flex-start;
+      border: 1px solid var(--border);
+      min-height: 44px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .product-link-btn:active { opacity: 0.7; }
+
+    /* MUST / RECOMMEND */
+    .must-list { display: grid; gap: 10px; margin-bottom: 24px; }
+    .must-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .must-icon { font-size: 15px; margin-top: 1px; flex-shrink: 0; }
+    .must-item strong { color: var(--text-dark); }
+
+    /* 핵심정보 카드 */
+    .key-info-box {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-top: 16px;
+      display: grid;
+      gap: 16px;
+    }
+    .key-info-group-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .key-info-item {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .key-info-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .key-info-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .key-info-desc {
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+    .key-info-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .key-info-tag {
+      font-size: 11px;
+      background: var(--tag-bg);
+      color: var(--green);
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+    .slogan-box {
+      background: var(--green);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 12.5px;
+      color: white;
+      line-height: 1.6;
+    }
+    .slogan-label {
+      font-size: 10px;
+      color: var(--green-pale);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .rec-list {
+      background: #F8EFE7;
+      border: 1px solid #E7CDB8;
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .rec-title { font-size: 12px; font-weight: 700; color: var(--green); margin-bottom: 12px; }
+    .rec-item { font-size: 12.5px; color: var(--text-mid); padding: 5px 0; border-bottom: 1px solid #E7CDB8; line-height: 1.6; }
+    .rec-item:last-child { border-bottom: none; }
+
+    /* HASHTAG */
+    .hashtag-section { margin-top: 20px; }
+    .hashtag-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-mid);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hashtag-label .required { background: var(--green); color: white; font-size: 10px; padding: 2px 7px; border-radius: 10px; }
+    .hashtag-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .hashtag {
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+      transition: opacity 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      min-height: 44px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .hashtag:active { opacity: 0.6; }
+    .hashtag.req { background: var(--green); color: white; }
+    .hashtag.req::after { content: '⎘'; font-size: 11px; color: rgba(255,255,255,0.5); }
+
+    /* WARNING */
+    .warning-box {
+      background: #FBF2EA;
+      border: 1px solid #CFA488;
+      border-radius: 12px;
+      padding: 16px 18px;
+      font-size: 12.5px;
+      color: #6E4632;
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+    .warning-box strong { color: #4E3326; }
+
+    /* REFERENCE */
+    .ref-box {
+      display: grid;
+      gap: 10px;
+    }
+    .ref-note { font-size: 11px; color: var(--text-light); margin-bottom: 4px; }
+    .ref-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      text-decoration: none;
+      transition: background 0.15s;
+      min-height: 52px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .ref-link:active { background: var(--tag-bg); }
+    .ref-link-label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .ref-link-arrow {
+      font-size: 13px;
+      color: var(--green-light);
+    }
+
+    /* APPLY */
+    .apply-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 18px;
+      background: var(--green);
+      color: white;
+      font-size: 15px;
+      font-weight: 700;
+      border-radius: 14px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      min-height: 56px;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      transition: opacity 0.15s;
+    }
+    .apply-btn:active { opacity: 0.75; }
+
+    /* DIVIDER */
+    .divider { height: 1px; background: var(--border); margin: 24px 0; }
+
+    /* COPY TOAST */
+    .copy-toast {
+      position: fixed;
+      bottom: max(32px, env(safe-area-inset-bottom, 32px));
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background: rgba(58,38,28, 0.9);
+      color: white;
+      font-size: 13px;
+      padding: 10px 20px;
+      border-radius: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s, transform 0.2s;
+      z-index: 9999;
+      white-space: nowrap;
+    }
+    .copy-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--green);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 36px 32px;
+      padding-bottom: max(36px, env(safe-area-inset-bottom, 36px));
+      font-size: 11.5px;
+      letter-spacing: 0.05em;
+      line-height: 1.8;
+    }
+    .footer strong { color: rgba(255,255,255,0.85); }
+
+    @media (max-width: 480px) {
+      .section { padding: 36px 20px; }
+      .section-title { font-size: 18px; }
+      .section-label { font-size: 9.5px; }
+      .about-lead { font-size: 13px; }
+      .info-box { padding: 20px; }
+      .info-row { font-size: 13px; }
+      .info-key { min-width: 62px; font-size: 11px; }
+      .product-name { font-size: 14px; }
+      .must-item { font-size: 12.5px; padding: 12px 14px; }
+      .key-info-box { padding: 14px 16px; }
+      .key-info-tag { font-size: 11px; padding: 4px 9px; }
+      .hashtag { font-size: 12px; padding: 10px 12px; }
+      .ref-link-label { font-size: 13px; }
+      .apply-btn { font-size: 14px; }
+      .footer { padding: 28px 20px; font-size: 11px; }
+    }
+
+    @media (max-width: 360px) {
+      .section { padding: 28px 14px; }
+      .section-title { font-size: 17px; }
+      .about-lead { font-size: 12.5px; }
+      .hashtag { font-size: 11.5px; padding: 9px 10px; }
+      .about-item { padding: 14px 16px; }
+      .info-box { padding: 16px; }
+      .must-item { font-size: 12px; padding: 10px 12px; gap: 10px; }
+      .key-info-box { padding: 12px 14px; gap: 12px; }
+      .product-name { font-size: 13.5px; }
+      .apply-btn { font-size: 13.5px; min-height: 52px; }
+    }
+
+    /* MAIN HOOK */
+    .deal-box {
+      background: linear-gradient(160deg, var(--green) 0%, #93583A 100%);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .deal-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--green-pale);
+    }
+    .deal-price {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .deal-before { font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: line-through; }
+    .deal-arrow { font-size: 13px; color: var(--green-pale); }
+    .deal-after {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .deal-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .deal-badge {
+      font-size: 11px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 20px;
+      padding: 4px 10px;
+    }
+    .deal-note { font-size: 12px; line-height: 1.75; color: rgba(255,255,255,0.88); margin-top: 14px; }
+    .deal-note strong { color: #fff; }
+    .guide-sub { font-size: 12px; color: var(--text-mid); line-height: 1.7; margin-top: 10px; }
+    .guide-sub strong { color: var(--text-dark); }
+
+    /* APPLICATION FORM */
+    .form-group { margin-bottom: 18px; }
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .form-label .req { color: #C0504D; margin-left: 2px; }
+    .form-label .opt { font-size: 11px; color: var(--text-light); font-weight: 500; margin-left: 4px; }
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      /* 16px 미만이면 iOS 에서 포커스 시 화면이 확대됨 */
+      font-size: 16px;
+      font-family: inherit;
+      color: var(--text-dark);
+      background: #fff;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .form-input:focus, .form-textarea:focus { outline: none; border-color: var(--green); }
+    .form-input[readonly] { background: var(--warm-white); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--text-light); opacity: 0.75; }
+    .form-textarea { resize: vertical; min-height: 90px; line-height: 1.7; }
+    .form-row-zip { display: flex; gap: 8px; }
+    .form-row-zip .form-input { flex: 1; min-width: 0; }
+    .zip-search-btn {
+      padding: 0 18px;
+      min-height: 50px;
+      background: var(--text-dark);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .zip-search-btn:active { opacity: 0.8; }
+
+    .note-box {
+      border: 1px dashed var(--green-light);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      background: var(--cream);
+    }
+    .note-box-title { font-size: 13px; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+    .note-box ul { padding-left: 18px; font-size: 12.5px; color: var(--text-mid); line-height: 1.85; }
+    .note-box li + li { margin-top: 4px; }
+
+    .agree-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin: 20px 0;
+      font-size: 12.5px;
+      color: var(--text-mid);
+      line-height: 1.75;
+      cursor: pointer;
+    }
+    .agree-row input[type="checkbox"] {
+      margin-top: 3px;
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      accent-color: var(--green);
+    }
+    .agree-row strong { color: var(--green); font-weight: 700; }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      min-height: 54px;
+      padding: 16px 20px;
+      background: var(--text-dark);
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      font-size: 14.5px;
+      font-weight: 700;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .submit-btn:active { opacity: 0.85; }
+    .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* SETTLEMENT */
+    .settlement-lead { font-size: 13.5px; color: var(--text-mid); margin-bottom: 22px; line-height: 1.8; }
+    .settlement-lead strong { color: var(--text-dark); }
+    .settle-tag-label {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .settle-doc-text { font-size: 13px; color: var(--text-mid); margin: 0 0 20px; line-height: 1.75; }
+    .settle-copy-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      font-size: 13.5px;
+      color: var(--text-dark);
+    }
+    .settle-copy-box span { word-break: break-all; }
+    .settle-copy-btn {
+      flex-shrink: 0;
+      background: var(--green);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 9px 14px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .settle-copy-btn:active { opacity: 0.8; }
+
+    /* MOBILE POLISH */
+    @media (max-width: 480px) {
+      .form-label { font-size: 12.5px; }
+      .form-input, .form-textarea { padding: 13px 14px; }
+      .zip-search-btn { padding: 0 14px; font-size: 12.5px; }
+      .note-box { padding: 14px 16px; }
+      .note-box ul { font-size: 12px; }
+      .agree-row { font-size: 12px; }
+      .submit-btn { font-size: 14px; }
+      .settlement-lead { font-size: 13px; }
+      .settle-copy-box { font-size: 12.5px; padding: 13px 14px; }
+    }
+    @media (max-width: 360px) {
+      .form-group { margin-bottom: 15px; }
+      .form-row-zip { gap: 6px; }
+      .zip-search-btn { padding: 0 11px; font-size: 12px; }
+      .settle-copy-box { flex-wrap: wrap; gap: 10px; }
+      .settle-copy-btn { width: 100%; padding: 11px 14px; }
+      .submit-btn { font-size: 13.5px; }
+    }
+
+    /* MAIN HOOK — 보조 카드 · 안내문 */
+    .deal-sub { font-size: 11.5px; line-height: 1.7; margin-top: 12px; color: rgba(255,255,255,0.8); }
+    .deal-box-alt {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      color: var(--text-dark);
+    }
+    .deal-box-alt .deal-label { color: var(--green); }
+    .deal-box-alt .deal-before { color: var(--text-light); }
+    .deal-box-alt .deal-arrow { color: var(--green-light); }
+    .deal-box-alt .deal-after { color: var(--text-dark); }
+    .deal-box-alt .deal-badge {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      color: var(--green);
+    }
+    .deal-box-alt .deal-sub { color: var(--text-light); }
+    .deal-note-box {
+      border: 1px dashed var(--green-light);
+      border-radius: 12px;
+      background: var(--cream);
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+    .deal-note-box strong { color: var(--text-dark); }
+
+    /* ACCORDION */
+    .acc {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .acc-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
+      cursor: pointer;
+      list-style: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .acc-head::-webkit-details-marker { display: none; }
+    .acc-head::marker { content: ''; }
+    .acc-head strong { color: var(--text-dark); }
+    .acc-head:active { background: var(--tag-bg); }
+    .acc-icon { font-size: 15px; flex-shrink: 0; }
+    .acc-label { flex: 1; min-width: 0; }
+    .acc-arrow {
+      flex-shrink: 0;
+      font-size: 12px;
+      color: var(--green);
+      transition: transform 0.2s;
+    }
+    .acc[open] .acc-arrow { transform: rotate(180deg); }
+    .acc[open] .acc-head { border-bottom: 1px solid var(--border); }
+    .acc-body {
+      padding: 14px 16px 16px;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .acc-body > ul:first-child,
+    .acc-body > .key-info-box:first-child { margin-top: 0; }
+
+    @media (max-width: 480px) {
+      .acc-head { font-size: 12.5px; padding: 13px 14px; }
+      .acc-body { padding: 13px 14px 15px; font-size: 12.5px; }
+      .deal-note-box { font-size: 11.5px; padding: 13px 14px; }
+    }
+  
+    /* OFFLINE — 지점 선택 */
+    .branch-toggle {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      padding: 5px;
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 18px;
+    }
+    .branch-toggle button {
+      min-height: 44px;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      font-family: inherit;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-light);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .branch-toggle button.on { background: #fff; color: var(--green); box-shadow: 0 1px 6px rgba(169,107,71,0.18); }
+    body[data-branch="hongdae"] [data-store="seongsu"],
+    body[data-branch="seongsu"] [data-store="hongdae"] { display: none !important; }
+
+    .store-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 18px 16px;
+    }
+    .store-box-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--green);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .store-point { margin-bottom: 14px; }
+    .store-point + .store-point { padding-top: 14px; border-top: 1px solid var(--warm-white); }
+    .store-point-title {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .store-point-num { font-family: 'Montserrat', sans-serif; font-size: 11px; color: var(--green); letter-spacing: 0.05em; }
+    .store-point ul { padding-left: 18px; font-size: 12.5px; color: var(--text-mid); line-height: 1.8; }
+    .store-point li + li { margin-top: 3px; }
+    .hl { color: #C0504D; font-weight: 700; }
+
+    .thumb-copy { display: flex; flex-direction: column; gap: 6px; margin: 10px 0 4px; }
+    .thumb-copy span {
+      display: block;
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .ok-ng { display: grid; gap: 6px; margin-top: 6px; font-size: 12.5px; }
+    .ok-ng .ok { color: var(--green); font-weight: 700; }
+    .ok-ng .ng { color: #C0504D; font-weight: 700; }
+
+    .branch-options { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .branch-opt { position: relative; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+    .branch-opt input { position: absolute; opacity: 0; width: 1px; height: 1px; left: 50%; bottom: 0; }
+    .branch-opt span {
+      display: block;
+      padding: 14px 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-mid);
+      line-height: 1.4;
+    }
+    .branch-opt span small { display: block; font-size: 11px; font-weight: 500; color: var(--text-light); margin-top: 2px; }
+    .branch-opt input:checked + span { border-color: var(--green); background: var(--tag-bg); color: var(--green); }
+    .branch-opt input:focus-visible + span { outline: 2px solid var(--green); outline-offset: 2px; }
+    .brand-slogan {
+      background: var(--green);
+      color: #fff;
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 16px;
+      font-family: 'Noto Serif KR', serif;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .brand-slogan-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 4px;
+    }
+    .about-motto {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1.25;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+    @media (max-width: 480px) { .about-motto { font-size: 19px; } }
+    .rank-list { display: grid; gap: 6px; }
+    .rank-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .rank-item b { color: var(--green); font-weight: 800; font-size: 14px; }
+    .proof-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--text-dark);
+      color: #fff;
+      border-radius: 20px;
+      padding: 7px 14px;
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+    .flow { list-style: none; display: grid; gap: 8px; margin-top: 6px; }
+    .flow li {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      align-items: start;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .flow li.key { border-color: var(--green); background: var(--tag-bg); }
+    .flow-num {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--green);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .flow-title { font-size: 13.5px; font-weight: 700; color: var(--text-dark); line-height: 1.5; }
+    .flow-desc { font-size: 12.5px; color: var(--text-mid); line-height: 1.65; margin-top: 2px; }
+    .about-proof { display: block; margin-top: 10px; }
+    .about-proof strong { color: var(--text-dark); }
+
+    /* MOBILE OPTIMIZATION */
+    .banner-overlay .header-eyebrow,
+    .banner-overlay .header-title,
+    .banner-overlay .header-sub { text-shadow: 0 1px 8px rgba(58,42,34, 0.35); }
+    .collab-handle { min-height: 44px; }
+    .settle-copy-btn { min-height: 44px; }
+    .branch-options { align-items: stretch; }
+    .branch-opt span {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    @media (max-width: 480px) {
+      .header-sub { letter-spacing: 0.15em; }
+      .info-key { font-size: 12px; min-width: 66px; }
+      .key-info-group-title { font-size: 12px; }
+      .key-info-tag { font-size: 12px; }
+      .ref-note { font-size: 12px; }
+      .flow li { padding: 10px; gap: 9px; }
+      .flow-desc { font-size: 13px; }
+      .thumb-copy span { font-size: 13px; }
+      .acc-label { line-height: 1.5; }
+      .branch-opt span { font-size: 13.5px; padding: 12px 8px; }
+      .branch-opt span small { font-size: 11.5px; }
+    }
+    @media (max-width: 360px) {
+      .brand-slogan { font-size: 15.5px; padding: 14px 16px; }
+      .about-motto { font-size: 17px; }
+      .header-sub { font-size: 9px; letter-spacing: 0.1em; }
+      .info-key { min-width: 60px; }
+    }
+    .banner-overlay { background: linear-gradient(90deg, rgba(58,42,34,0.55) 0%, rgba(58,42,34,0.25) 55%, rgba(58,42,34,0) 80%); }
+
+    /* FLOATING SECTION NAV */
+    .float-nav {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 50;
+      transform: translateY(110%);
+      transition: transform 0.25s ease;
+      background: rgba(251, 247, 242, 0.94);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 16px rgba(58, 42, 34, 0.08);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    .float-nav.show { transform: translateY(0); }
+    .float-nav-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 10px 16px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .float-nav-inner::-webkit-scrollbar { display: none; }
+    .float-nav a {
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text-mid);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.15s, color 0.15s;
+    }
+    .float-nav a.on { background: var(--green); border-color: var(--green); color: #fff; }
+    .section { scroll-margin-top: 12px; }
+    body.has-float-nav .footer { padding-bottom: calc(36px + 64px + env(safe-area-inset-bottom, 0px)); }
+    body.has-float-nav .copy-toast { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+
+    /* MOBILE OPTIMIZATION 2 */
+    .rank-item { gap: 10px; }
+    .rank-item span { flex: 1; min-width: 0; }
+    .rank-item b { flex: none; white-space: nowrap; }
+    .float-nav a { min-height: 40px; }
+    .footer { color: rgba(255,255,255,0.78); }
+    @media (max-width: 480px) {
+      .section-label { font-size: 10.5px; }
+      .hashtag { font-size: 12.5px; }
+      .hashtag-label .required { font-size: 11px; }
+      .form-label .opt { font-size: 12px; }
+      .branch-opt span small { font-size: 12px; }
+      .footer { font-size: 12px; }
+      .float-nav a { font-size: 13.5px; padding: 0 15px; }
+    }
+    @media (max-width: 360px) {
+      .rank-item { padding: 10px 12px; font-size: 12.5px; }
+      .rank-item b { font-size: 13.5px; }
+      .hashtag { font-size: 12px; }
+      .header-sub { font-size: 9.5px; }
+    }
+  </style>
+</head>
+<body data-branch="hongdae">
+
+<!-- BANNER -->
+<div class="banner-wrap">
+  <img src="image/배너_순율.webp" alt="잇퓨 스킨 리밸런싱 순율 앰플">
+  <div class="banner-overlay">
+    <div class="header-eyebrow">Influencer Guideline</div>
+    <div class="header-title">잇퓨 가이드라인</div>
+    <div class="header-sub">Soonyul Ampoule × Creator Campaign</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div class="section">
+  <div class="section-label">About Brand</div>
+  <div class="section-title">잇퓨에 대하여</div>
+  <div class="brand-slogan">
+    <div class="brand-slogan-label">Slogan</div>
+    피부 고민과 스킨 솔루션을 잇다, 잇퓨
+  </div>
+  <p class="about-lead">
+    <span class="about-motto">YOUR SKIN CONCERNS,<br>OUR BEAUTY SOLUTIONS</span>
+    피부 고민 집중 솔루션, 더마 기능성 브랜드 잇퓨입니다.
+    <span class="about-proof">대표 제품 <strong>잇퓨모공앰플(율무모공앰플)</strong>은 쿠팡·네이버 유관 검색 1위를 비롯해<br><strong>모공 · 피부결 · 요철 · 피지 밸런싱 앰플 1위</strong>를 기록했으며, <strong>전국 약국에 공식 입점</strong>해 있습니다.</span>
+  </p>
+  <div class="brand-img-wrap">
+    <img src="image/모델.webp" alt="잇퓨 순율앰플을 든 모델" loading="lazy">
+  </div>
+  <a href="https://it-fu.com" target="_blank" class="brand-link-btn">브랜드 바로가기 →</a>
+</div>
+
+<!-- 캠페인 개요 -->
+<div class="section">
+  <div class="section-label">Campaign Info</div>
+  <div class="section-title">캠페인 개요</div>
+  <div class="info-box">
+    <div class="info-box-title">Schedule & Details</div>
+    <div class="info-row">
+      <div class="info-key">형식</div>
+      <div class="info-val">릴스 (Reels)</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">미션</div>
+      <div class="info-val"><strong>잇퓨모공앰플 리뷰</strong><br>(무신사 매장 방문 포함)</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">제공 제품</div>
+      <div class="info-val"><strong>스킨 리밸런싱 순율 앰플</strong></div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">타겟 키워드</div>
+      <div class="info-val"><strong>잇퓨모공앰플 · 율무모공앰플</strong></div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">방문 지점</div>
+      <div class="info-val"><strong>홍대점 · 성수점 중 택 1</strong><br>캠페인 신청 시 선택</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">영상 길이</div>
+      <div class="info-val">30초 이내</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">공동작업자</div>
+      <div class="info-val">필수</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">2차 활용</div>
+      <div class="info-val">동의</div>
+    </div>
+    <div class="info-row">
+      <div class="info-key">활용기간</div>
+      <div class="info-val">3개월</div>
+    </div>
+  </div>
+
+  <!-- 제공 제품 -->
+  <div style="font-size:12px;font-weight:700;color:var(--text-mid);margin-bottom:10px;letter-spacing:0.05em;">제공 제품</div>
+  <div class="product-list">
+    <div class="product-box">
+      <img src="image/순율앰플.webp" alt="잇퓨 스킨 리밸런싱 순율앰플" loading="lazy" style="width:100%;border-radius:10px;display:block;">
+      <div class="product-name">스킨 리밸런싱 순율 앰플</div>
+      <a href="https://it-fu.com/product/%EC%B6%9C%EC%8B%9C%EC%99%84%ED%8C%90%EB%AA%A8%EA%B3%B5%EA%B0%9C%EC%84%A0-%EC%8A%A4%ED%82%A8-%EB%A6%AC%EB%B0%B8%EB%9F%B0%EC%8B%B1-%EC%88%9C%EC%9C%A8-%EC%95%B0%ED%94%8C/28/category/72/display/1/" target="_blank" rel="noopener" class="product-link-btn">제품 상세 보기 →</a>
+    </div>
+  </div>
+</div>
+
+<!-- 방문 매장 안내 -->
+<div class="section">
+  <div class="section-label">Store Info</div>
+  <div class="section-title">방문 매장 안내</div>
+
+  <div class="branch-toggle" role="tablist" aria-label="방문 지점">
+    <button type="button" class="on" data-branch-btn="hongdae" role="tab">홍대점</button>
+    <button type="button" data-branch-btn="seongsu" role="tab">성수점</button>
+  </div>
+
+  <div class="settle-tag-label" style="margin-top:0">방문 주소</div>
+  <div class="settle-copy-box" data-store="hongdae">
+    <span>서울 마포구 홍익로 18</span>
+    <button type="button" class="settle-copy-btn" onclick="copyText('서울 마포구 홍익로 18')">복사</button>
+  </div>
+  <div class="settle-copy-box" data-store="seongsu">
+    <span>서울 성동구 성수동2가 271-24</span>
+    <button type="button" class="settle-copy-btn" onclick="copyText('서울 성동구 성수동2가 271-24')">복사</button>
+  </div>
+  <div style="height:16px"></div>
+
+  <div class="note-box" style="margin-bottom:0">
+    <div class="note-box-title">📌 매장 방문 시</div>
+    <ul>
+      <li>매장 내 <strong>잇퓨 진열 구역</strong>에서 순율앰플 실물을 찾아 촬영해 주세요.</li>
+      <li>무신사 매장은 <strong>‘잇퓨가 입점한 곳’</strong>을 보여주는 장면으로 짧게만 담아 주세요.</li>
+      <li>매장 할인·행사·타 브랜드 소개는 넣지 않으셔도 됩니다.</li>
+    </ul>
+  </div>
+
+  <div class="settle-tag-label" style="margin-top:20px">방문 콘텐츠 레퍼런스</div>
+  <div class="must-list">
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">📦</span>
+        <span class="acc-label"><strong>[제품 수령 후 방문 콘텐츠 레퍼런스]</strong> <span style="color:var(--text-light);font-weight:500">(4)</span></span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <div class="ref-box">
+          <a href="https://www.instagram.com/reel/DXq1eO_jz0Z/" target="_blank" rel="noopener" class="ref-link">
+            <span class="ref-link-label">방문 콘텐츠 레퍼런스 1</span>
+            <span class="ref-link-arrow">→</span>
+          </a>
+          <a href="https://www.instagram.com/reel/DX1HjcNxBSc/" target="_blank" rel="noopener" class="ref-link">
+            <span class="ref-link-label">방문 콘텐츠 레퍼런스 2</span>
+            <span class="ref-link-arrow">→</span>
+          </a>
+          <a href="https://www.instagram.com/reel/DX6zfbUPs2f/" target="_blank" rel="noopener" class="ref-link">
+            <span class="ref-link-label">방문 콘텐츠 레퍼런스 3</span>
+            <span class="ref-link-arrow">→</span>
+          </a>
+          <a href="https://www.instagram.com/reel/DbdbNgiC7ca/" target="_blank" rel="noopener" class="ref-link">
+            <span class="ref-link-label">방문 콘텐츠 레퍼런스 4</span>
+            <span class="ref-link-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">📍</span>
+        <span class="acc-label"><strong>[무신사 홍대점 방문]</strong> <span style="color:var(--text-light);font-weight:500">(3)</span></span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <div class="ref-box">
+          <a href="https://www.instagram.com/reel/DdWG5R9zoyj/" target="_blank" rel="noopener" class="ref-link">
+            <span class="ref-link-label">무신사 홍대점 방문 ①</span>
+            <span class="ref-link-arrow">→</span>
+          </a>
+          <a href="https://www.instagram.com/reel/DdOCi2_Sx8r/" target="_blank" rel="noopener" class="ref-link">
+            <span class="ref-link-label">무신사 홍대점 방문 ②</span>
+            <span class="ref-link-arrow">→</span>
+          </a>
+          <a href="https://www.instagram.com/reel/Dd3cRnIzoPg/" target="_blank" rel="noopener" class="ref-link">
+            <span class="ref-link-label">무신사 홍대점 방문 ③</span>
+            <span class="ref-link-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </details>
+  </div>
+</div>
+
+<!-- 제작 가이드 -->
+<div class="section">
+  <div class="section-label">Content Guide</div>
+  <div class="section-title">업로드 가이드</div>
+
+  <div class="note-box">
+    <div class="note-box-title">📌 안내</div>
+    <ul>
+      <li>가이드는 브랜드 상황에 따라 추후 변동될 수 있으며, 변동 시 담당자가 별도로 안내드립니다.</li>
+    </ul>
+  </div>
+
+  <div class="must-list">
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">🎬</span>
+        <span class="acc-label"><strong>[영상 연출 순서]</strong> <strong style="color:var(--green)">(필수)</strong></span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <ol class="flow">
+          <li><span class="flow-num">1</span><div><div class="flow-title">피부 고민</div><div class="flow-desc">평소 피부 고민으로 공감 오프닝<br>예) “화장해도 피부결이 울퉁불퉁해 보여요”</div></div></li>
+          <li><span class="flow-num">2</span><div><div class="flow-title">모공 고민</div><div class="flow-desc">모공·요철 클로즈업으로 고민을 구체적으로 보여주기</div></div></li>
+          <li class="key"><span class="flow-num">3</span><div><div class="flow-title">무신사 매장에서 순율앰플 발견</div><div class="flow-desc">무신사 오프라인 매장 <strong>잇퓨 진열 구역</strong>에서 순율앰플을 발견하는 장면<br>예) “무신사 매장 갔다가 <strong>잇퓨모공앰플</strong> 발견했어요”</div></div></li>
+          <li><span class="flow-num">4</span><div><div class="flow-title">사용 후기</div><div class="flow-desc">직접 사용해 보고 — 제형·흡수감, 사용 후 <strong>모공·피부결 변화</strong> (Before/After 권장)</div></div></li>
+          <li class="key"><span class="flow-num">5</span><div><div class="flow-title">순율앰플 소개</div><div class="flow-desc"><strong>잇퓨 순율앰플(잇퓨모공앰플)</strong> 소개 — 핵심성분(율무포어™·6펩타이드·징크·나이아신아마이드 3%)과 <strong>모공 면적 23.39% 개선 임상</strong> 등 공식 수치</div></div></li>
+        </ol>
+        <div class="guide-sub">영상 길이 <strong>30초 이내</strong>로, 각 단계를 짧고 자연스럽게 이어주세요.</div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">🧴</span>
+        <span class="acc-label"><strong>[제품 정보]</strong> 순율앰플 핵심사항 · 핵심성분</span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <div class="key-info-box">
+          <div>
+            <div class="key-info-group-title">핵심사항</div>
+            <div class="key-info-item">
+              <div class="key-info-name">순율앰플 <span style="font-weight:500;color:var(--text-light)">(메인)</span></div>
+              <div class="key-info-desc"><strong>스테디셀러 순율 라인의 모공+결 케어 앰플</strong></div>
+            </div>
+          </div>
+          <div>
+            <div class="key-info-group-title">핵심성분</div>
+            <div class="key-info-tags">
+              <span class="key-info-tag">율무포어™</span>
+              <span class="key-info-tag">6펩타이드</span>
+              <span class="key-info-tag">징크</span>
+              <span class="key-info-tag">나이아신아마이드 3%</span>
+            </div>
+          </div>
+          <div>
+            <div class="key-info-group-title">공식 수치 (상세페이지 기준)</div>
+            <div class="rank-list">
+              <div class="rank-item"><span>모공 면적 개선 임상 완료</span><b>23.39%</b></div>
+              <div class="rank-item"><span>모공 깊이 개선 임상 완료</span><b>16.6%</b></div>
+              <div class="rank-item"><span>피부결(요철) 개선 임상 완료</span><b>11.69%</b></div>
+              <div class="rank-item"><span>순율 라인 누적 판매</span><b>60만 병</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">🏆</span>
+        <span class="acc-label"><strong>영상 내 자막이나 나레이션으로 넣어주세요</strong> <strong style="color:var(--green)">(필수)</strong></span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <div class="key-info-box">
+          <div>
+            <div class="key-info-group-title">활용 가능한 포인트</div>
+            <div class="key-info-tags">
+              <span class="key-info-tag">모공 면적 23.39% 개선 임상</span>
+              <span class="key-info-tag">모공 깊이 16.6% 개선 임상</span>
+              <span class="key-info-tag">피부결(요철) 11.69% 개선 임상</span>
+              <span class="key-info-tag">순율 라인 60만 병 판매</span>
+              <span class="key-info-tag">쿠팡·네이버 유관 검색 1위</span>
+              <span class="key-info-tag">모공 앰플 1위</span>
+              <span class="key-info-tag">피부결 앰플 1위</span>
+              <span class="key-info-tag">요철 앰플 1위</span>
+              <span class="key-info-tag">피지 밸런싱 앰플 1위</span>
+              <span class="key-info-tag">전국 약국 공식 입점</span>
+              <span class="key-info-tag">무신사 입점</span>
+            </div>
+          </div>
+          <div>
+            <div class="key-info-group-title">필수 문구</div>
+            <div class="thumb-copy" style="margin:0 0 6px">
+              <span style="border-color:var(--green);background:#fff">“무신사에서 유명한 잇퓨모공앰플” <strong style="color:#C0504D">(필수)</strong></span>
+            </div>
+            <div class="key-info-desc">자막 또는 나레이션에 <strong>반드시</strong> 포함해 주세요.</div>
+          </div>
+          <div>
+            <div class="key-info-group-title">추가 문구 예시</div>
+            <div class="thumb-copy" style="margin:0">
+              <span>“모공 면적 23.39% 개선 임상 완료한 잇퓨모공앰플”</span>
+              <span>“쿠팡·네이버 모공앰플 1위”</span>
+              <span>“전국 약국에도 입점한 그 모공앰플”</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">🖼️</span>
+        <span class="acc-label"><strong>[썸네일 · 첫 장면]</strong> <strong style="color:var(--green)">(필수)</strong></span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <div class="key-info-box">
+          <div>
+            <div class="key-info-group-title">썸네일 문구 예시</div>
+            <div class="thumb-copy" style="margin:0">
+              <span>‘모공 고민이라면, 잇퓨모공앰플’</span>
+              <span>‘잇퓨모공앰플, 무신사에서 직접 찾았어요’</span>
+              <span>‘율무모공앰플 쓰고 달라진 피부결’</span>
+            </div>
+          </div>
+          <div>
+            <div class="key-info-group-title">썸네일 이미지</div>
+            <div class="key-info-desc"><strong>순율앰플 제품</strong> 또는 <strong>모공·피부결 클로즈업</strong> 중심으로 구성해 주세요.<br>매장 전경·할인 매대 위주의 썸네일은 지양해 주세요.</div>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">🔍</span>
+        <span class="acc-label"><strong>[타겟 키워드]</strong> 영상 · 캡션 노출 <strong style="color:var(--green)">(필수)</strong></span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <div class="key-info-box">
+          <div>
+            <div class="key-info-group-title">타겟 키워드 — 탭하여 복사</div>
+            <div class="hashtag-wrap" style="margin-bottom:0">
+              <div class="hashtag req">잇퓨모공앰플</div>
+              <div class="hashtag req">율무모공앰플</div>
+            </div>
+          </div>
+        </div>
+        <div class="guide-sub"><strong>잇퓨모공앰플 · 율무모공앰플</strong>을 영상 자막(나레이션)과 캡션에 <strong>각 1회 이상</strong> 노출해 주세요.</div>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">🎥</span>
+        <span class="acc-label"><strong>[필수 촬영 컷]</strong> <strong style="color:var(--green)">(필수)</strong></span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <ul style="margin-top:8px;padding-left:18px;display:flex;flex-direction:column;gap:6px;">
+          <li><strong>모공·피부결 클로즈업</strong> — 사용 전 / 사용 후</li>
+          <li><strong>순율앰플 제품 컷 · 제형 컷</strong> — 제품명이 잘 보이도록</li>
+          <li><strong>매장 내 잇퓨 진열 구역</strong> — 순율앰플을 집어 드는 장면</li>
+          <li><strong>무신사 매장 입구·외관</strong> — ‘입점’을 보여주는 용도로 1~2초 짧게</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">🔗</span>
+        <span class="acc-label"><strong>[공동작업자]</strong> 설정 필수</span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <span class="collab-handle" style="margin-top:6px;display:inline-flex;align-items:center;gap:5px;font-size:13px;color:var(--green);font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;padding:4px 0;">@itfu_official ⎘</span><br>
+        <span class="collab-handle" style="margin-top:4px;display:inline-flex;align-items:center;gap:5px;font-size:13px;color:var(--green);font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;padding:4px 0;">@itfu_global ⎘</span>
+      </div>
+    </details>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 해시태그 -->
+  <div class="hashtag-section">
+    <div class="hashtag-label">해시태그 <span class="required">필수</span></div>
+    <div class="hashtag-wrap">
+      <div class="hashtag req">#잇퓨모공앰플</div>
+      <div class="hashtag req">#율무모공앰플</div>
+      <div class="hashtag req">#잇퓨</div>
+      <div class="hashtag req">#잇퓨앰플</div>
+      <div class="hashtag req">#모공앰플</div>
+      <div class="hashtag req">#율무앰플</div>
+      <div class="hashtag req">#순율앰플</div>
+      <div class="hashtag req">#무신사모공앰플</div>
+      <div class="hashtag req">#무신사뷰티</div>
+    </div>
+  </div>
+
+  <div class="hashtag-section">
+    <div class="hashtag-label">공동작업자 <span class="required">필수</span></div>
+    <div class="hashtag-wrap">
+      <div class="hashtag req">@itfu_official</div>
+      <div class="hashtag req">@itfu_global</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="rec-list">
+    <div class="rec-title">필수 유의 사항</div>
+    <div class="rec-item">매장 할인·행사·타 브랜드 제품 소개는 지양해 주세요.</div>
+    <div class="rec-item">매장 촬영 시 타인의 초상권을 해치지 않도록 유의 (<strong>타인의 얼굴 모자이크 필수</strong>)</div>
+    <div class="rec-item">나레이션 삽입 시, BGM은 무료 음원 사용</div>
+    <div class="rec-item">키메세지 자막이 데드존(화면 가장자리·UI 영역)에 걸치지 않도록 주의</div>
+    <div class="rec-item">영상 길이 <strong>30초 이내</strong> 제작</div>
+  </div>
+
+  <div class="warning-box">
+    공동작업자 설정 및 콘텐츠 2차 활용에 동의하는 것으로 간주됩니다.
+  </div>
+</div>
+
+<!-- 레퍼런스 -->
+<div class="section">
+  <div class="section-label">Reference</div>
+  <div class="section-title">레퍼런스 콘텐츠</div>
+  <div class="ref-note">콘텐츠 제작 참고용 — 항목을 눌러 펼친 뒤 탭하여 확인</div>
+
+  <div class="must-list">
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">⭐</span>
+        <span class="acc-label"><strong>[제품 리뷰 레퍼런스]</strong> <span style="color:var(--text-light);font-weight:500">(7)</span></span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <div class="ref-box">
+          <a href="https://www.instagram.com/reel/DX5ukX9R083/" target="_blank" rel="noopener" class="ref-link">
+            <span class="ref-link-label">제품 리뷰 레퍼런스 1</span>
+            <span class="ref-link-arrow">→</span>
+          </a>
+          <a href="https://www.instagram.com/reel/DWIJyCsASQh/" target="_blank" rel="noopener" class="ref-link">
+            <span class="ref-link-label">제품 리뷰 레퍼런스 2</span>
+            <span class="ref-link-arrow">→</span>
+          </a>
+          <a href="https://www.instagram.com/reel/DbDJJuvT67C/" target="_blank" rel="noopener" class="ref-link">
+            <span class="ref-link-label">제품 리뷰 레퍼런스 3</span>
+            <span class="ref-link-arrow">→</span>
+          </a>
+          <a href="https://www.instagram.com/reel/Ddh6yr5TRJL/" target="_blank" rel="noopener" class="ref-link">
+            <span class="ref-link-label">제품 리뷰 레퍼런스 4</span>
+            <span class="ref-link-arrow">→</span>
+          </a>
+          <a href="https://www.instagram.com/reel/DbYSNKySE8X/" target="_blank" rel="noopener" class="ref-link">
+            <span class="ref-link-label">제품 리뷰 레퍼런스 5</span>
+            <span class="ref-link-arrow">→</span>
+          </a>
+          <a href="https://www.instagram.com/reel/DdgNttdxSFB/" target="_blank" rel="noopener" class="ref-link">
+            <span class="ref-link-label">제품 리뷰 레퍼런스 6</span>
+            <span class="ref-link-arrow">→</span>
+          </a>
+          <a href="https://www.instagram.com/reel/DdeFX2OT-4i/" target="_blank" rel="noopener" class="ref-link">
+            <span class="ref-link-label">제품 리뷰 레퍼런스 7</span>
+            <span class="ref-link-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </details>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>it:fu (잇퓨)</strong><br>
+  본 가이드라인은 선별된 크리에이터에게만 제공되는 자료입니다.<br>
+  문의사항이 있으시면 담당자에게 연락해 주세요.
+</div>
+
+<div class="copy-toast" id="copyToast"></div>
+
+<script>
+  function showToast(text) {
+    const toast = document.getElementById('copyToast');
+    toast.textContent = '"' + text + '" 복사됨';
+    toast.classList.add('show');
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => toast.classList.remove('show'), 1500);
+  }
+
+  // 복사가 아닌 일반 안내용 토스트 ('복사됨' 접미사 없음)
+  function showNotice(text) {
+    const toast = document.getElementById('copyToast');
+    toast.textContent = text;
+    toast.classList.add('show');
+    clearTimeout(toast._timer);
+    toast._timer = setTimeout(() => toast.classList.remove('show'), 2200);
+  }
+
+  // 클립보드 API가 막힌 환경(구형 브라우저·비활성 탭)을 위한 폴백
+  function legacyCopy(text) {
+    try {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.cssText = 'position:fixed;top:0;left:-9999px;opacity:0;';
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, text.length);
+      const ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function copyText(text) {
+    const fallback = () => {
+      if (legacyCopy(text)) showToast(text);
+      else showNotice('복사에 실패했습니다. 텍스트를 길게 눌러 복사해 주세요.');
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(() => showToast(text)).catch(fallback);
+    } else {
+      fallback();
+    }
+  }
+
+  document.querySelectorAll('.hashtag').forEach(el => {
+    el.addEventListener('click', () => {
+      const tag = el.textContent.replace('⎘', '').trim();
+      copyText(tag);
+    });
+  });
+
+  document.querySelectorAll('.collab-handle').forEach(el => {
+    el.addEventListener('click', () => {
+      const handle = el.textContent.replace('⎘', '').trim();
+      copyText(handle);
+    });
+  });
+</script>
+
+<script>
+  // 방문 지점 — 매장 안내 토글과 신청서 선택을 서로 연동
+  function setBranch(b) {
+    document.body.setAttribute('data-branch', b);
+    document.querySelectorAll('[data-branch-btn]').forEach(btn => {
+      const on = btn.dataset.branchBtn === b;
+      btn.classList.toggle('on', on);
+      btn.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+  }
+  document.querySelectorAll('[data-branch-btn]').forEach(btn => {
+    btn.addEventListener('click', () => setBranch(btn.dataset.branchBtn));
+  });
+  document.querySelectorAll('input[name="branch"]').forEach(r => {
+    r.addEventListener('change', () => setBranch(r.value === '성수점' ? 'seongsu' : 'hongdae'));
+  });
+  setBranch('hongdae');
+</script>
+
+<script>
+  // 영역 이동 플로팅 메뉴 — 페이지에 있는 섹션만 자동으로 만듦
+  (function () {
+    const NAMES = {
+      'About Brand': '브랜드', 'Campaign Info': '개요', 'Store Info': '방문 매장',
+      'Content Guide': '업로드 가이드', 'Reference': '레퍼런스', 'Application': '캠페인 신청', 'Settlement': '정산'
+    };
+    const sections = [...document.querySelectorAll('.section')].filter(sec => {
+      const label = sec.querySelector('.section-label');
+      return label && NAMES[label.textContent.trim()];
+    });
+    if (!sections.length) return;
+
+    const nav = document.createElement('nav');
+    nav.className = 'float-nav';
+    nav.setAttribute('aria-label', '영역 이동');
+    const inner = document.createElement('div');
+    inner.className = 'float-nav-inner';
+    const links = sections.map((sec, i) => {
+      const key = sec.querySelector('.section-label').textContent.trim();
+      sec.id = sec.id || 'sec-' + i;
+      const a = document.createElement('a');
+      a.href = '#' + sec.id;
+      a.textContent = NAMES[key];
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        lockIdx = i;
+        lockUntil = Date.now() + 1200;
+        setActive(i);
+        const y = sec.getBoundingClientRect().top + window.scrollY - 12;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        history.replaceState(null, '', '#' + sec.id);
+      });
+      inner.appendChild(a);
+      return a;
+    });
+    nav.appendChild(inner);
+    document.body.appendChild(nav);
+    document.body.classList.add('has-float-nav');
+
+    const banner = document.querySelector('.banner-wrap');
+    let current = -1, lockIdx = -1, lockUntil = 0;
+    function setActive(idx) {
+      if (idx === current) return;
+      current = idx;
+      links.forEach((a, i) => a.classList.toggle('on', i === idx));
+      const on = links[idx];
+      inner.scrollTo({ left: on.offsetLeft - inner.clientWidth / 2 + on.offsetWidth / 2, behavior: 'smooth' });
+    }
+    function update() {
+      const showAt = Math.max(160, banner ? banner.offsetTop + banner.offsetHeight - 20 : 200);
+      nav.classList.toggle('show', window.scrollY > showAt);
+      let idx = 0;
+      const line = window.innerHeight * 0.35;
+      sections.forEach((sec, i) => { if (sec.getBoundingClientRect().top <= line) idx = i; });
+      if (Date.now() < lockUntil) { lockUntil = Date.now() + 300; idx = lockIdx; }
+      setActive(idx);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    const bannerImg = banner && banner.querySelector('img');
+    if (bannerImg && !bannerImg.complete) bannerImg.addEventListener('load', update);
+    update();
+  })();
+</script>
+
+</body>
+</html>
