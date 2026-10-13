@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>it:fu — 인플루언서 가이드라인</title>
+  <meta name="description" content="스킨 리밸런싱 순율 앰플 · 잇퓨모공앰플 릴스 캠페인 가이드라인">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="it:fu">
+  <meta property="og:title" content="잇퓨 인플루언서 가이드라인">
+  <meta property="og:description" content="스킨 리밸런싱 순율 앰플 · 잇퓨모공앰플 릴스 캠페인 가이드라인">
+  <meta property="og:image" content="https://itfu-guideline.vercel.app/og-soonyul.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=Montserrat:wght@300;400&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -797,6 +806,119 @@
       .acc-body { padding: 13px 14px 15px; font-size: 12.5px; }
       .deal-note-box { font-size: 11.5px; padding: 13px 14px; }
     }
+
+    /* BRAND PROOF */
+    .brand-slogan {
+      background: var(--green);
+      color: #fff;
+      border-radius: 14px;
+      padding: 16px 18px;
+      margin-bottom: 16px;
+      font-family: 'Noto Serif KR', serif;
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .brand-slogan-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 4px;
+    }
+    .about-motto {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      line-height: 1.25;
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+    @media (max-width: 480px) { .about-motto { font-size: 19px; } }
+    .about-proof { display: block; margin-top: 10px; }
+    .about-proof strong { color: var(--text-dark); }
+    .rank-list { display: grid; gap: 6px; }
+    .rank-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .rank-item span { flex: 1; min-width: 0; }
+    .rank-item b { flex: none; white-space: nowrap; color: var(--green); font-weight: 800; font-size: 14px; }
+    .thumb-copy { display: flex; flex-direction: column; gap: 6px; margin: 10px 0 4px; }
+    .thumb-copy span {
+      display: block;
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    @media (max-width: 360px) {
+      .brand-slogan { font-size: 15.5px; padding: 14px 16px; }
+      .about-motto { font-size: 17px; }
+    }
+
+    /* FLOATING SECTION NAV */
+    .float-nav {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 50;
+      transform: translateY(110%);
+      transition: transform 0.25s ease;
+      background: rgba(245, 250, 253, 0.94);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 16px rgba(26, 42, 53, 0.08);
+      padding-bottom: env(safe-area-inset-bottom, 0px);
+    }
+    .float-nav.show { transform: translateY(0); }
+    .float-nav-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 10px 16px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .float-nav-inner::-webkit-scrollbar { display: none; }
+    .float-nav a {
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text-mid);
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.15s, color 0.15s;
+    }
+    .float-nav a.on { background: var(--green); border-color: var(--green); color: #fff; }
+    .section { scroll-margin-top: 12px; }
+    body.has-float-nav .footer { padding-bottom: calc(36px + 64px + env(safe-area-inset-bottom, 0px)); }
+    body.has-float-nav .copy-toast { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
   </style>
 </head>
 <body>
@@ -815,8 +937,14 @@
 <div class="section">
   <div class="section-label">About Brand</div>
   <div class="section-title">잇퓨에 대하여</div>
+  <div class="brand-slogan">
+    <div class="brand-slogan-label">Slogan</div>
+    피부 고민과 스킨 솔루션을 잇다, 잇퓨
+  </div>
   <p class="about-lead">
-    국내 스킨케어 브랜드로, "피부 요철 케어"와 저자극 성분 중심의 제품을 메인 콘셉트로 잡고 있어요. 브랜드명은 it + future의 의미를 담고 있으며, 자연 유래 성분과 피부 고민 해결 중심의 포뮬러를 강조하는 브랜드입니다.
+    <span class="about-motto">YOUR SKIN CONCERNS,<br>OUR BEAUTY SOLUTIONS</span>
+    피부 고민 집중 솔루션, 더마 기능성 브랜드 잇퓨입니다.
+    <span class="about-proof">대표 제품 <strong>잇퓨모공앰플(율무모공앰플)</strong>은 쿠팡·네이버 유관 검색 1위를 비롯해<br><strong>모공 · 피부결 · 요철 · 피지 밸런싱 앰플 1위</strong>를 기록했으며, <strong>전국 약국에 공식 입점</strong>해 있습니다.</span>
   </p>
   <div class="brand-img-wrap">
     <img src="image/제품.PNG" alt="it:fu 제품" loading="lazy">
@@ -929,9 +1057,72 @@
               </div>
             </div>
           </div>
+          <div>
+            <div class="key-info-group-title">공식 수치 (상세페이지 기준)</div>
+            <div class="rank-list">
+              <div class="rank-item"><span>모공 면적 개선 임상 완료</span><b>23.39%</b></div>
+              <div class="rank-item"><span>모공 깊이 개선 임상 완료</span><b>16.6%</b></div>
+              <div class="rank-item"><span>피부결(요철) 개선 임상 완료</span><b>11.69%</b></div>
+              <div class="rank-item"><span>순율 라인 누적 판매</span><b>60만 병</b></div>
+            </div>
+          </div>
           <div class="slogan-box">
             <div class="slogan-label">Slogan</div>
             피부 고민과 스킨 솔루션을 잇다, 잇퓨
+          </div>
+        </div>
+      </div>
+    </details>
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">🏆</span>
+        <span class="acc-label"><strong>[필수 문구]</strong> 자막·나레이션에 포함 <strong style="color:var(--green)">(필수)</strong></span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <div class="key-info-box">
+          <div>
+            <div class="key-info-group-title">활용 가능한 포인트</div>
+            <div class="key-info-tags">
+              <span class="key-info-tag">모공 면적 23.39% 개선 임상</span>
+              <span class="key-info-tag">모공 깊이 16.6% 개선 임상</span>
+              <span class="key-info-tag">피부결(요철) 11.69% 개선 임상</span>
+              <span class="key-info-tag">순율 라인 60만 병 판매</span>
+              <span class="key-info-tag">쿠팡·네이버 유관 검색 1위</span>
+              <span class="key-info-tag">모공 앰플 1위</span>
+              <span class="key-info-tag">전국 약국 공식 입점</span>
+            </div>
+          </div>
+          <div>
+            <div class="key-info-group-title">문구 예시</div>
+            <div class="thumb-copy" style="margin:0">
+              <span>“모공 면적 23.39% 개선 임상 완료한 잇퓨모공앰플”</span>
+              <span>“쿠팡·네이버 모공앰플 1위”</span>
+              <span>“전국 약국에도 입점한 그 모공앰플”</span>
+            </div>
+          </div>
+        </div>
+        <div class="guide-sub">위 포인트 중 <strong>1개 이상</strong>을 영상 자막(나레이션)이나 캡션에 자연스럽게 녹여주세요.</div>
+      </div>
+    </details>
+    <details class="acc">
+      <summary class="acc-head">
+        <span class="acc-icon">🖼️</span>
+        <span class="acc-label"><strong>[썸네일 · 첫 장면]</strong> <strong style="color:var(--green)">(추천)</strong></span>
+        <span class="acc-arrow">▾</span>
+      </summary>
+      <div class="acc-body">
+        <div class="key-info-box">
+          <div>
+            <div class="key-info-group-title">썸네일 문구 예시</div>
+            <div class="thumb-copy" style="margin:0">
+              <span>‘모공 고민이라면, 잇퓨모공앰플’</span>
+              <span>‘율무모공앰플 쓰고 달라진 피부결’</span>
+            </div>
+          </div>
+          <div>
+            <div class="key-info-group-title">썸네일 이미지</div>
+            <div class="key-info-desc"><strong>순율앰플 제품</strong> 또는 <strong>모공·피부결 클로즈업</strong> 중심으로 구성해 주세요.</div>
           </div>
         </div>
       </div>
@@ -1166,6 +1357,73 @@
       copyText(handle);
     });
   });
+</script>
+
+<script>
+  // 영역 이동 플로팅 메뉴 — 페이지에 있는 섹션만 자동으로 만듦
+  (function () {
+    const NAMES = {
+      'About Brand': '브랜드', 'Campaign Info': '개요',
+      'Content Guide': '제작 가이드', 'Reference': '레퍼런스', 'Settlement': '정산'
+    };
+    const sections = [...document.querySelectorAll('.section')].filter(sec => {
+      const label = sec.querySelector('.section-label');
+      return label && NAMES[label.textContent.trim()];
+    });
+    if (!sections.length) return;
+
+    const nav = document.createElement('nav');
+    nav.className = 'float-nav';
+    nav.setAttribute('aria-label', '영역 이동');
+    const inner = document.createElement('div');
+    inner.className = 'float-nav-inner';
+    const links = sections.map((sec, i) => {
+      const key = sec.querySelector('.section-label').textContent.trim();
+      sec.id = sec.id || 'sec-' + i;
+      const a = document.createElement('a');
+      a.href = '#' + sec.id;
+      a.textContent = NAMES[key];
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        lockIdx = i;
+        lockUntil = Date.now() + 1200;
+        setActive(i);
+        const y = sec.getBoundingClientRect().top + window.scrollY - 12;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+        history.replaceState(null, '', '#' + sec.id);
+      });
+      inner.appendChild(a);
+      return a;
+    });
+    nav.appendChild(inner);
+    document.body.appendChild(nav);
+    document.body.classList.add('has-float-nav');
+
+    const banner = document.querySelector('.banner-wrap');
+    let current = -1, lockIdx = -1, lockUntil = 0;
+    function setActive(idx) {
+      if (idx === current) return;
+      current = idx;
+      links.forEach((a, i) => a.classList.toggle('on', i === idx));
+      const on = links[idx];
+      inner.scrollTo({ left: on.offsetLeft - inner.clientWidth / 2 + on.offsetWidth / 2, behavior: 'smooth' });
+    }
+    function update() {
+      const showAt = Math.max(160, banner ? banner.offsetTop + banner.offsetHeight - 20 : 200);
+      nav.classList.toggle('show', window.scrollY > showAt);
+      let idx = 0;
+      const line = window.innerHeight * 0.35;
+      sections.forEach((sec, i) => { if (sec.getBoundingClientRect().top <= line) idx = i; });
+      if (Date.now() < lockUntil) { lockUntil = Date.now() + 300; idx = lockIdx; }
+      setActive(idx);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    window.addEventListener('load', update);
+    const bannerImg = banner && banner.querySelector('img');
+    if (bannerImg && !bannerImg.complete) bannerImg.addEventListener('load', update);
+    update();
+  })();
 </script>
 
 </body>
