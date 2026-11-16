@@ -929,6 +929,30 @@
     .product-list .product-box img { aspect-ratio: 1 / 1; object-fit: cover; }
     .product-list .product-name { font-size: 13px; flex: 1; }
     .product-list .product-link-btn { justify-content: center; padding: 9px 8px; font-size: 11px; }
+    /* 아코디언 — 필수 / 선택 구분 */
+    .acc.req { border-color: var(--green-light); box-shadow: inset 4px 0 0 var(--green); }
+    .acc.req .acc-head { background: var(--green-pale); }
+    .acc.req .acc-body { background: var(--warm-white); }
+    .acc:not(.req) { background: #FFFFFF; }
+    .acc:not(.req) .acc-head { background: #FFFFFF; }
+    /* 가독성 개선 — 글자 크기 · 줄간격 · 항목 간격 */
+    .about-item-desc { font-size: 14px; line-height: 1.75; }
+    .acc-head { font-size: 13.5px; padding: 15px 16px; }
+    .acc-body { font-size: 14px; line-height: 1.75; padding: 16px 16px 18px; }
+    .acc-body ul { gap: 9px !important; }
+    .acc-body li { padding-left: 2px; }
+    .key-info-box { gap: 20px; }
+    .key-info-group-title { font-size: 12.5px; margin-bottom: 6px; }
+    .key-info-desc { font-size: 13.5px; line-height: 1.75; }
+    .key-info-tag { font-size: 12px; }
+    .guide-sub { font-size: 13px; line-height: 1.75; }
+    .rec-item { font-size: 13.5px; line-height: 1.7; padding: 9px 0; }
+    .info-row { line-height: 1.6; }
+    .rank-item { font-size: 13px; }
+    @media (max-width: 360px) {
+      .acc-body, .about-item-desc { font-size: 13.5px; }
+      .key-info-desc, .rec-item { font-size: 13px; }
+    }
   </style>
 </head>
 <body>
@@ -962,7 +986,7 @@
   <div class="about-grid">
     <div class="about-item">
       <div class="about-item-title">캠페인 제품</div>
-      <div class="about-item-desc">이번 캠페인 제품은 <strong>사우나 애프터케어 세트(SAUNA AFTER CARE SET)</strong>입니다. 히알루론산 카테킨 수딩 패드와 스킨 리밸런싱 순율 앰플로 구성됩니다.</div>
+      <div class="about-item-desc">이번 캠페인 제품은 <strong>사우나 애프터케어 세트(SAUNA AFTER CARE SET)</strong>입니다.<br>히알루론산 카테킨 수딩 패드와 스킨 리밸런싱 순율 앰플로 구성됩니다.</div>
     </div>
     <div class="about-item">
       <div class="about-item-title">캠페인 콘셉트</div>
@@ -1038,7 +1062,7 @@
   </div>
 
   <div class="must-list">
-    <details class="acc" open>
+    <details class="acc req" open>
       <summary class="acc-head">
         <span class="acc-icon">🧖</span>
         <span class="acc-label"><strong>[촬영 배경]</strong> 사우나 · 반신욕 · 효소찜질 · 운동 중 택 1 <strong style="color:var(--green)">(필수)</strong></span>
@@ -1055,7 +1079,7 @@
       </div>
     </details>
 
-    <details class="acc">
+    <details class="acc req">
       <summary class="acc-head">
         <span class="acc-icon">🎬</span>
         <span class="acc-label"><strong>[스토리보드]</strong> 제품 삽입 흐름 <strong style="color:var(--green)">(필수)</strong></span>
@@ -1109,7 +1133,7 @@
       </div>
     </details>
 
-    <details class="acc">
+    <details class="acc req">
       <summary class="acc-head">
         <span class="acc-icon">✅</span>
         <span class="acc-label"><strong>[필수 내용]</strong> 영상 내 포함 <strong style="color:var(--green)">(필수)</strong></span>
@@ -1178,7 +1202,7 @@
       </div>
     </details>
 
-    <details class="acc">
+    <details class="acc req">
       <summary class="acc-head">
         <span class="acc-icon">✍️</span>
         <span class="acc-label"><strong>[본문 · 댓글]</strong> 작성 내용 <strong style="color:var(--green)">(필수)</strong></span>
@@ -1198,7 +1222,7 @@
       </div>
     </details>
 
-    <details class="acc">
+    <details class="acc req">
       <summary class="acc-head">
         <span class="acc-icon">🔗</span>
         <span class="acc-label"><strong>[공동작업자]</strong> 설정 필수</span>
