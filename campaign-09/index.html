@@ -923,6 +923,12 @@
     .section { scroll-margin-top: 12px; }
     body.has-float-nav .footer { padding-bottom: calc(36px + 64px + env(safe-area-inset-bottom, 0px)); }
     body.has-float-nav .copy-toast { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
+    /* 제공 제품 — 가로 2열 */
+    .product-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .product-list .product-box { padding: 14px; gap: 10px; }
+    .product-list .product-box img { aspect-ratio: 1 / 1; object-fit: cover; }
+    .product-list .product-name { font-size: 13px; flex: 1; }
+    .product-list .product-link-btn { justify-content: center; padding: 9px 8px; font-size: 11px; }
   </style>
 </head>
 <body>
