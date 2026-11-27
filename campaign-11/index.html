@@ -1095,7 +1095,7 @@
     .banner-overlay .header-sub { text-shadow: 0 1px 6px rgba(20, 35, 65, 0.45); }
   </style>
 </head>
-<body data-branch="hongdae">
+<body data-branch="seongsu">
 
 <!-- BANNER -->
 <div class="banner-wrap">
@@ -1150,7 +1150,7 @@
     </div>
     <div class="info-row">
       <div class="info-key">방문 지점</div>
-      <div class="info-val"><strong>홍대점 · 성수점 중 택 1</strong><br>캠페인 신청 시 선택</div>
+      <div class="info-val"><strong>무신사 메가스토어 성수</strong></div>
     </div>
     <div class="info-row">
       <div class="info-key">영상 길이</div>
@@ -1192,16 +1192,8 @@
   <div class="section-label">Store Info</div>
   <div class="section-title">방문 매장 안내</div>
 
-  <div class="branch-toggle" role="tablist" aria-label="방문 지점">
-    <button type="button" class="on" data-branch-btn="hongdae" role="tab">홍대점</button>
-    <button type="button" data-branch-btn="seongsu" role="tab">성수점</button>
-  </div>
-
-  <div class="settle-tag-label" style="margin-top:0">방문 주소</div>
-  <div class="settle-copy-box" data-store="hongdae">
-    <span>서울 마포구 홍익로 18</span>
-    <button type="button" class="settle-copy-btn" onclick="copyText('서울 마포구 홍익로 18')">복사</button>
-  </div>
+  <div class="settle-tag-label" style="margin-top:0">방문 매장 · 주소</div>
+  <div class="settle-doc-text" style="margin-bottom:8px"><strong>무신사 메가스토어 성수</strong></div>
   <div class="settle-copy-box" data-store="seongsu">
     <span>서울 성동구 성수동2가 271-24</span>
     <button type="button" class="settle-copy-btn" onclick="copyText('서울 성동구 성수동2가 271-24')">복사</button>
@@ -1450,9 +1442,8 @@
   <form id="applicationForm" onsubmit="return submitApplication(event)">
     <div class="form-group">
       <div class="form-label">방문 지점<span class="req">*</span></div>
-      <div class="branch-options" role="radiogroup" aria-label="방문 지점">
-        <label class="branch-opt"><input type="radio" name="branch" value="홍대점" required><span>무신사 뷰티 홍대<small>마포구 홍익로 18</small></span></label>
-        <label class="branch-opt"><input type="radio" name="branch" value="성수점"><span>무신사 메가스토어 성수<small>성동구 성수동2가 271-24</small></span></label>
+      <div class="branch-options" role="radiogroup" aria-label="방문 지점" style="grid-template-columns:1fr">
+                <label class="branch-opt"><input type="radio" name="branch" value="성수점" checked required><span>무신사 메가스토어 성수<small>성동구 성수동2가 271-24</small></span></label>
       </div>
     </div>
 
@@ -1715,7 +1706,7 @@
     }).then(() => {
       showNotice('제출이 완료되었습니다');
       form.reset();
-      setBranch('hongdae');
+      setBranch('seongsu');
       document.getElementById('appFullAddress').value = '';
     }).catch(() => {
       showNotice('제출 중 오류가 발생했습니다. 다시 시도해 주세요.');
@@ -1742,7 +1733,7 @@
   document.querySelectorAll('input[name="branch"]').forEach(r => {
     r.addEventListener('change', () => setBranch(r.value === '성수점' ? 'seongsu' : 'hongdae'));
   });
-  setBranch('hongdae');
+  setBranch('seongsu');
 </script>
 
 <script>
